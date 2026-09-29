@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Verzish.com 3.0 · Unisex Gym · North Nazimabad, Karachi · Open 24 Hours</title>
-<meta name="description" content="The Verzish.com 3.0 — unisex gym on the 2nd floor, Plot B-122, Block H, North Nazimabad, Karachi. Open 24 hours. Strength floor under an LED web ceiling, plus a dedicated studio. Call 0333-3138451.">
+<title>The Verzish.com · Unisex Gyms in Karachi · FB Area · Gulistan-e-Johar · North Nazimabad</title>
+<meta name="description" content="The Verzish.com — three unisex gyms in Karachi: Vol 1.0 FB Area (B-69, Block 17), Vol 2.0 Gulistan-e-Johar (B-191, Block 11) and Vol 3.0 North Nazimabad (B-122, Block H, open 24 hours). Call 0333-3138451.">
 <meta name="theme-color" content="#181b20">
-<meta property="og:title" content="The Verzish.com 3.0 — Always On Top">
-<meta property="og:description" content="Unisex gym · Block H, North Nazimabad, Karachi · Open 24 hours">
-<meta property="og:image" content="logo.png">
+<meta property="og:title" content="The Verzish.com — Always On Top">
+<meta property="og:description" content="Three unisex gyms across Karachi · FB Area · Gulistan-e-Johar · North Nazimabad">
+<meta property="og:image" content="mark.png">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +16,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Archivo:wdth,wght@62..125,300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ExerciseGym","name":"The Verzish.com 3.0","telephone":"+92-333-3138451",
-"address":{"@type":"PostalAddress","streetAddress":"Plot # B-122, Block H, 2nd Floor, Street 5, North Nazimabad","addressLocality":"Karachi","addressRegion":"Sindh","addressCountry":"PK"},
-"openingHours":"Mo-Su 00:00-23:59","sameAs":["https://www.instagram.com/theverzishdotcom3.0/"]}
+{"@context":"https://schema.org","@type":"Organization","name":"The Verzish.com","email":"theverzish@gmail.com","telephone":"+92-333-3138451","logo":"mark.png",
+"department":[
+{"@type":"ExerciseGym","name":"The Verzish.com Vol 3.0","telephone":"+92-333-3138451","openingHours":"Mo-Su 00:00-23:59","address":{"@type":"PostalAddress","streetAddress":"Plot # B-122, Block H, 2nd Floor, Street 5, North Nazimabad","addressLocality":"Karachi","addressCountry":"PK"},"sameAs":["https://www.instagram.com/theverzishdotcom3.0/"]},
+{"@type":"ExerciseGym","name":"The Verzish.com Vol 2.0","telephone":"+92-315-2078581","address":{"@type":"PostalAddress","streetAddress":"Plot # B-191, Block 11, Gulistan-e-Johar","addressLocality":"Karachi","addressCountry":"PK"},"sameAs":["https://www.instagram.com/theverzishdotcom2.0/"]},
+{"@type":"ExerciseGym","name":"The Verzish.com Vol 1.0","telephone":"+92-333-3138451","address":{"@type":"PostalAddress","streetAddress":"Plot No. B-69, Block 17, Federal B Area","addressLocality":"Karachi","postalCode":"71500","addressCountry":"PK"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"15"},"sameAs":["https://www.instagram.com/theverzishdotcom1.0/"]}
+]}
 </script>
 <style>
 /* Hallmark · genre: atmospheric (client-overridden: maximal) · macrostructure: bespoke "Cinema Reel"
@@ -83,8 +86,8 @@ p{margin:0}
 /* buttons */
 .btn{--bg:transparent;--fg:var(--color-glow);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:var(--radius-pill);background:var(--bg);color:var(--fg);font-family:var(--font-body);font-weight:650;font-size:var(--text-sm);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border:1px solid var(--color-line-2);transition:background var(--dur-base) var(--ease-out),color var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out);isolation:isolate;overflow:hidden}
 .btn svg{width:18px;height:18px;flex:none}
-.btn--solid{--bg:var(--chrome);--fg:var(--color-disc);border-color:#d9dbde;box-shadow:var(--glow-sm),inset 0 1px 0 #fff,inset 0 -2px 4px rgb(58 62 69 / .35)}
-.btn--solid:hover{box-shadow:var(--glow-lg)}
+.btn--solid{--bg:var(--color-glow);--fg:var(--color-disc);border-color:var(--color-glow);box-shadow:0 6px 18px rgb(8 9 11 / .45)}
+.btn--solid:hover{--bg:#ffffff;box-shadow:0 0 0 3px rgb(242 243 245 / .25),0 8px 24px rgb(8 9 11 / .5)}
 .btn--ghost:hover{border-color:var(--color-glow);box-shadow:inset 0 0 0 1px var(--color-glow),var(--glow-sm)}
 .btn:active{transform:translateY(1px)}
 .btn[data-state="loading"]{opacity:.7;pointer-events:none}
@@ -92,8 +95,8 @@ p{margin:0}
 /* cursor */
 .cursor,.cursor-dot{position:fixed;left:0;top:0;z-index:200;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);display:none}
 .cursor{width:42px;height:42px;border:1px solid var(--color-glow);mix-blend-mode:difference;transition:width var(--dur-base) var(--ease-out),height var(--dur-base) var(--ease-out),background var(--dur-base);display:none;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--color-ink)}
-.cursor-dot{width:5px;height:5px;background:var(--color-glow)}
-.cursor.is-link{width:68px;height:68px;background:var(--color-glow)}
+.cursor-dot{width:6px;height:6px;background:var(--color-glow);mix-blend-mode:difference}
+.cursor.is-link{width:58px;height:58px;background:transparent;mix-blend-mode:normal;border-color:rgb(242 243 245 / .7)}
 .cursor.is-view{width:92px;height:92px;background:var(--color-glow);mix-blend-mode:normal}
 .cursor span{opacity:0;transition:opacity var(--dur-fast)}
 .cursor.is-view span{opacity:1}
@@ -129,18 +132,16 @@ html:not(.js) .loader{display:none}
 .nav__burger span{transform:translateY(-3px)}
 .menu-open .nav__burger span{transform:rotate(45deg)}
 .menu-open .nav__burger span::before{transform:translateY(-6px) rotate(-90deg)}
-.menu{position:fixed;inset:0;z-index:95;background:var(--color-ink);display:flex;flex-direction:column;justify-content:flex-end;padding:120px var(--gutter) calc(110px + env(safe-area-inset-bottom,0px));clip-path:circle(0% at calc(100% - 48px) 44px);transition:clip-path .8s var(--ease-in-out);visibility:hidden}
-.menu-open .menu{clip-path:circle(150% at calc(100% - 48px) 44px);visibility:visible}
-.menu a{font-family:var(--font-display);font-weight:900;font-size:clamp(3rem,15vw,5rem);line-height:.95;text-transform:uppercase;color:var(--color-glow);display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--color-line);padding:6px 0}
-.menu a small{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-mute);font-weight:400}
+.menu{position:fixed;z-index:101;top:calc(78px + env(safe-area-inset-top,0px));right:12px;width:min(250px,calc(100% - 24px));padding:8px;border-radius:20px;background:rgb(24 27 32 / .92);border:1px solid var(--color-line-2);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 20px 50px rgb(8 9 11 / .6);transform-origin:calc(100% - 30px) 0;transform:scale(.9) translateY(-8px);opacity:0;visibility:hidden;transition:transform var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out),visibility 0s linear var(--dur-base)}
+.menu-open .menu{transform:none;opacity:1;visibility:visible;transition-delay:0s}
+.menu a{display:flex;justify-content:space-between;align-items:center;height:44px;padding:0 14px;border-radius:12px;font-weight:600;font-size:var(--text-md);color:var(--color-soft)}
+.menu a:hover,.menu a:focus-visible{background:rgb(242 243 245 / .08);color:var(--color-glow)}
+.menu a small{font-family:var(--font-mono);font-size:11px;color:var(--color-mute);font-weight:400}
+.menu .menu__call{margin-top:6px;justify-content:center;gap:8px;background:var(--color-glow);color:var(--color-disc);font-size:var(--text-sm);letter-spacing:.06em;text-transform:uppercase}
+.menu .menu__call:hover{background:#fff;color:var(--color-disc)}
 @media (max-width:980px){.nav__links,.nav__cta{display:none}.nav__burger{display:inline-flex}}
 
-/* mobile dock */
-.dock{position:fixed;z-index:99;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:6px;border-radius:20px;background:rgb(24 27 32 / .85);border:1px solid var(--color-line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.dock a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 4px;border-radius:14px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-soft)}
-.dock a:first-child{background:var(--chrome);color:var(--color-disc)}
-.dock svg{width:20px;height:20px}
-@media (max-width:980px){.dock{display:grid}}
+
 
 /* ───────── HERO ───────── */
 .hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--color-ink)}
@@ -174,7 +175,7 @@ html:not(.js) .loader{display:none}
 .hero__sub{max-width:34rem;font-size:clamp(1rem,.9rem + .4vw,1.2rem);color:var(--color-soft)}
 .hero__sub strong{color:var(--color-glow);font-weight:600}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
-.hero__tools{position:absolute;z-index:4;right:var(--gutter);bottom:calc(26px + env(safe-area-inset-bottom,0px));display:flex;gap:8px}
+.hero__tools{position:absolute;z-index:4;right:calc(var(--gutter) + 170px);bottom:calc(26px + env(safe-area-inset-bottom,0px));display:flex;gap:8px}
 .chip{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:var(--radius-pill);border:1px solid var(--color-line-2);background:rgb(8 9 11 / .35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-glow);white-space:nowrap;transition:border-color var(--dur-fast),background var(--dur-fast)}
 .chip:hover{border-color:var(--color-glow);background:rgb(242 243 245 / .08)}
 .chip svg{width:14px;height:14px}
@@ -185,12 +186,10 @@ html:not(.js) .loader{display:none}
 @media (max-width:600px){.hero__title{font-size:min(31vw,20svh)}.hero__ctas{width:100%}.hero__ctas .btn{flex:1 1 0;min-width:0;padding:0 14px}.hero__inner{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}}
 
 /* ───────── MARQUEE ───────── */
-.marquee{position:relative;padding:var(--space-lg) 0;border-block:1px solid var(--color-line);overflow:hidden;background:var(--color-ink)}
+.marquee{position:relative;z-index:4;overflow:hidden;background:var(--color-glow);border-block:2px solid var(--color-disc);box-shadow:0 0 0 1px var(--color-glow)}
 .marquee__row{display:flex;width:max-content;will-change:transform}
-.marquee__row + .marquee__row{margin-top:6px}
-.marquee__item{display:flex;align-items:center;gap:clamp(18px,3vw,40px);padding-right:clamp(18px,3vw,40px);font-family:var(--font-display);font-weight:900;font-size:clamp(2.6rem,1.6rem + 5vw,6.5rem);line-height:1;text-transform:uppercase;color:var(--color-glow);white-space:nowrap}
-.marquee__row--out .marquee__item{color:transparent;-webkit-text-stroke:1.2px rgb(242 243 245 / .55)}
-.marquee__item svg{width:.55em;height:.55em;flex:none;filter:drop-shadow(0 0 6px rgb(242 243 245 / .8))}
+.marquee__item{display:flex;align-items:center;gap:18px;padding:0 18px 0 0;height:42px;font-family:var(--font-display);font-weight:900;font-size:clamp(1.15rem,1rem + .6vw,1.6rem);letter-spacing:.06em;line-height:1;text-transform:uppercase;color:var(--color-disc);white-space:nowrap}
+.marquee__item svg{width:14px;height:14px;flex:none}
 
 /* ───────── FACTS (steel slabs) ───────── */
 .facts{padding-block:var(--space-3xl) var(--space-2xl)}
@@ -277,7 +276,7 @@ html:not(.js) .loader{display:none}
 .studio__copy>p{font-size:var(--text-lg);max-width:30rem}
 .kit{display:flex;flex-wrap:wrap;gap:8px;margin:var(--space-xl) 0}
 .kit span{padding:9px 14px;border:1px solid var(--color-line-2);border-radius:var(--radius-pill);font-size:var(--text-sm);color:var(--color-soft);transition:background var(--dur-fast),color var(--dur-fast)}
-.kit span:hover{background:var(--chrome);color:var(--color-disc)}
+.kit span:hover{background:var(--color-glow);color:var(--color-disc)}
 .hexrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:var(--space-lg)}
 .hexrow figure{margin:0;aspect-ratio:3/4;position:relative;background:var(--chrome);padding:2px}
 .hexrow figure>div{width:100%;height:100%;overflow:hidden}
@@ -331,7 +330,7 @@ html:not(.js) .loader{display:none}
 .pick{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:var(--radius-pill);border:1px solid var(--color-line-2);font-size:var(--text-sm);font-weight:500;color:var(--color-soft);white-space:nowrap;transition:background var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast)}
 .pick::before{content:"";width:8px;height:8px;border-radius:50%;border:1px solid currentColor;transition:background var(--dur-fast)}
 .pick:hover{border-color:var(--color-glow);color:var(--color-glow)}
-.pick[aria-pressed="true"]{background:var(--chrome);color:var(--color-disc);border-color:#d9dbde}
+.pick[aria-pressed="true"]{background:var(--color-glow);color:var(--color-disc);border-color:#d9dbde}
 .pick[aria-pressed="true"]::before{background:var(--color-disc)}
 .field{display:grid;gap:6px;margin-bottom:var(--space-md)}
 .field label{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-mute)}
@@ -381,19 +380,110 @@ html:not(.js) .loader{display:none}
 @media (max-width:700px){.ig__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 /* ───────── FOOTER Ft5 statement ───────── */
-.foot{position:relative;padding:var(--space-3xl) 0 calc(var(--space-xl) + 90px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--color-line);overflow:hidden}
-.foot__coin{width:clamp(96px,12vw,150px);border-radius:50%;margin-bottom:var(--space-lg);box-shadow:0 20px 50px rgb(8 9 11 / .7),0 0 30px rgb(242 243 245 / .12)}
-.foot__big{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(4.2rem,1rem + 15vw,17rem);line-height:.8;color:var(--color-glow);letter-spacing:-.01em;text-shadow:var(--glow-sm)}
-.foot__big span{display:block;color:transparent;-webkit-text-stroke:1.5px rgb(242 243 245 / .8);text-shadow:none}
-.foot__row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-xl);margin-top:var(--space-2xl);padding-top:var(--space-xl);border-top:1px solid var(--color-line)}
-.foot__row h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;font-weight:500;color:var(--color-mute);margin-bottom:12px}
-.foot__row a,.foot__row p{display:block;font-size:var(--text-sm);color:var(--color-soft);padding:3px 0;white-space:nowrap}
-.foot__row a:hover{color:var(--color-glow)}
-.foot__legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:var(--space-xl)}
-.foot__web{position:absolute;right:-12vw;bottom:-20vw;width:60vw;opacity:.12;pointer-events:none}
-@media (max-width:900px){.foot__row{grid-template-columns:repeat(2,minmax(0,1fr))}.foot__row a,.foot__row p{white-space:normal}}
-@media (min-width:981px){.foot{padding-bottom:var(--space-xl)}}
+.foot{padding:22px 0 calc(22px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--color-line);background:var(--color-ink-2)}
+.foot__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px}
+.foot__brand{display:flex;align-items:center;gap:12px}
+.foot__brand img{width:40px;height:40px;border-radius:50%}
+.foot__brand strong{display:block;font-family:var(--font-display);font-weight:900;font-size:1.35rem;line-height:1;text-transform:uppercase;color:var(--color-glow)}
+.foot__brand span{font-size:var(--text-xs);color:var(--color-mute)}
+.foot__links{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:var(--text-sm)}
+.foot__links a{color:var(--color-soft);white-space:nowrap}
+.foot__links a:hover{color:var(--color-glow)}
+.foot__legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-top:14px;padding-top:12px;border-top:1px solid var(--color-line);font-size:11px}
 
+.bot-fab{position:fixed;z-index:110;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;height:60px;padding:0 6px 0 18px;border-radius:var(--radius-pill);background:var(--color-glow);color:var(--color-disc);font-weight:700;font-size:var(--text-sm);letter-spacing:.04em;box-shadow:0 10px 30px rgb(8 9 11 / .55);transition:transform var(--dur-base) var(--ease-out),box-shadow var(--dur-base)}
+.bot-fab:hover{transform:translateY(-2px);box-shadow:0 0 0 3px rgb(242 243 245 / .25),0 14px 34px rgb(8 9 11 / .6)}
+.bot-fab img{width:48px;height:48px;border-radius:50%;box-shadow:0 0 0 2px var(--color-disc)}
+.bot-fab__dot{position:absolute;top:6px;right:6px;width:12px;height:12px;border-radius:50%;background:var(--color-disc);border:2px solid var(--color-glow)}
+.bot-open .bot-fab__dot{display:none}
+@media (max-width:600px){.bot-fab{padding:0 6px;height:60px}.bot-fab__label{display:none}}
+.bot{position:fixed;z-index:111;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(88px + env(safe-area-inset-bottom,0px));width:min(360px,calc(100vw - 24px));height:min(500px,calc(100svh - 170px));display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--color-ink-2);border:1px solid var(--color-line-2);box-shadow:0 30px 70px rgb(8 9 11 / .7);transform-origin:calc(100% - 30px) 100%;transform:scale(.92) translateY(10px);opacity:0;visibility:hidden;transition:transform var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out),visibility 0s linear var(--dur-base)}
+.bot-open .bot{transform:none;opacity:1;visibility:visible;transition-delay:0s}
+@media (max-width:600px){.bot{right:12px;height:min(470px,calc(100svh - 160px))}}
+.bot__head{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px;background:var(--color-ink-3);border-bottom:1px solid var(--color-line)}
+.bot__head img{width:36px;height:36px;border-radius:50%}
+.bot__title{flex:1;min-width:0}
+.bot__title strong{display:block;font-size:var(--text-sm);color:var(--color-glow)}
+.bot__title span{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--color-mute)}
+.bot__title .dot{width:6px;height:6px}
+.bot__icon{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--color-soft);transition:background var(--dur-fast),color var(--dur-fast)}
+.bot__icon:hover{background:rgb(242 243 245 / .1);color:var(--color-glow)}
+.bot__icon svg{width:18px;height:18px}
+.bot__log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;overscroll-behavior:contain;scrollbar-width:thin}
+.msg{max-width:86%;padding:10px 13px;border-radius:16px;font-size:var(--text-sm);line-height:1.5;white-space:pre-line}
+.msg--bot{align-self:flex-start;background:var(--color-ink-3);color:var(--color-soft);border-bottom-left-radius:4px}
+.msg--me{align-self:flex-end;background:var(--color-glow);color:var(--color-disc);border-bottom-right-radius:4px}
+.msg a.msg__btn{display:inline-flex;margin-top:8px;padding:7px 12px;border-radius:var(--radius-pill);background:var(--color-glow);color:var(--color-disc);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.msg--typing{display:flex;gap:4px;padding:13px}
+.msg--typing i{width:6px;height:6px;border-radius:50%;background:var(--color-mute);animation:pulse 1s infinite}
+.msg--typing i:nth-child(2){animation-delay:.15s}.msg--typing i:nth-child(3){animation-delay:.3s}
+.bot__chips{display:flex;gap:6px;overflow-x:auto;padding:0 14px 10px;scrollbar-width:none}
+.bot__chips::-webkit-scrollbar{display:none}
+.bot__chips button{flex:none;height:32px;padding:0 12px;border-radius:var(--radius-pill);border:1px solid var(--color-line-2);font-size:12px;color:var(--color-soft);white-space:nowrap;transition:background var(--dur-fast),color var(--dur-fast)}
+.bot__chips button:hover{background:var(--color-glow);color:var(--color-disc)}
+.bot__form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--color-line);background:var(--color-ink-3)}
+.bot__form input{flex:1;min-width:0;height:44px;padding:0 14px;border-radius:var(--radius-pill);border:1px solid var(--color-line-2);background:var(--color-ink);color:var(--color-glow);font:inherit;font-size:16px}
+.bot__form input:focus-visible{outline:none;border-color:var(--color-glow)}
+.bot__form button{width:44px;height:44px;border-radius:50%;background:var(--color-glow);color:var(--color-disc);display:grid;place-items:center;flex:none}
+.bot__form button svg{width:18px;height:18px}
+.bot__err{padding:0 16px 6px;font-size:11px;color:var(--color-glow);min-height:0}
+
+.branches{padding-block:var(--space-3xl)}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;display:flex;align-items:center;gap:10px;height:58px;padding:0 20px 0 8px;border-radius:var(--radius-pill);border:1px solid var(--color-line-2);color:var(--color-soft);text-align:left;transition:background var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast)}
+.tab img{width:42px;height:42px;border-radius:50%}
+.tab span{font-size:var(--text-xs);line-height:1.2;color:var(--color-mute)}
+.tab b{display:block;font-family:var(--font-display);font-weight:900;font-size:1.25rem;letter-spacing:.02em;text-transform:uppercase;color:var(--color-glow)}
+.tab:hover{border-color:var(--color-glow)}
+.tab[aria-selected="true"]{background:var(--color-glow);border-color:var(--color-glow)}
+.tab[aria-selected="true"] b{color:var(--color-disc)}
+.tab[aria-selected="true"] span{color:var(--color-steel)}
+.bpanel{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);margin-top:18px;border:1px solid var(--color-line-2);border-radius:var(--radius-lg);overflow:hidden;background:var(--color-ink-2);animation:panelIn .6s var(--ease-out)}
+.bpanel[hidden]{display:none}
+@keyframes panelIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.bpanel__media{position:relative;min-height:560px;overflow:hidden;background:var(--color-ink)}
+.bpanel__main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05);transition:transform 1.4s var(--ease-out)}
+.bpanel__media:hover .bpanel__main{transform:scale(1.05)}
+.bpanel__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(8 9 11 / .25),transparent 35%,transparent 55%,rgb(8 9 11 / .8));pointer-events:none}
+.bpanel__coin{position:absolute;z-index:2;top:18px;left:18px;width:92px;height:92px;border-radius:50%;box-shadow:0 12px 30px rgb(8 9 11 / .7)}
+.bpanel__thumbs{position:absolute;z-index:2;left:18px;right:18px;bottom:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bpanel__thumbs img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;border:1px solid rgb(242 243 245 / .3);filter:saturate(.85)}
+.bpanel__info{padding:clamp(22px,3.5vw,44px);display:flex;flex-direction:column;gap:16px}
+.bpanel__info h3{font-size:clamp(3.2rem,2.2rem + 3vw,5.6rem);line-height:.82}
+.bpanel__info h3 small{display:block;font-size:.36em;color:var(--color-mute);margin-top:8px;letter-spacing:.04em}
+.bpanel__info>p{color:var(--color-soft);max-width:32rem}
+.bpanel__dl{margin:0;border-top:1px solid var(--color-line)}
+.bpanel__dl div{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;padding:11px 0;border-bottom:1px solid var(--color-line);font-size:var(--text-sm)}
+.bpanel__dl dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-mute);padding-top:2px}
+.bpanel__dl dd{margin:0;color:var(--color-glow)}
+.bpanel__dl a{text-decoration:underline;text-decoration-color:var(--color-line-2);text-underline-offset:3px}
+.bpanel__info .kit{margin:0}
+.bpanel__acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.bpanel__acts .btn{height:48px;padding:0 20px}
+@media (max-width:900px){.bpanel{grid-template-columns:minmax(0,1fr)}.bpanel__media{min-height:420px}.bpanel__coin{width:72px;height:72px}.bpanel__acts .btn{flex:1 1 auto}}
+.locs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.loc{position:relative;min-height:440px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--color-line-2);display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:24px;isolation:isolate;transition:border-color var(--dur-base)}
+.loc__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:grayscale(1) brightness(.45);transition:filter .8s var(--ease-out),transform 1.2s var(--ease-out)}
+.loc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(transparent 30%,rgb(8 9 11 / .9))}
+.loc:hover{border-color:var(--color-glow)}
+.loc:hover .loc__bg{filter:grayscale(0) brightness(.55);transform:scale(1.06)}
+.loc__coin{position:absolute;top:20px;right:20px;width:70px;height:70px;border-radius:50%;box-shadow:0 10px 26px rgb(8 9 11 / .7)}
+.loc h3{font-size:clamp(2.4rem,1.6rem + 2.4vw,3.8rem)}
+.loc p{font-size:var(--text-sm);color:var(--color-soft)}
+.loc__go{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-glow)}
+.clock-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:14px;padding:18px 24px;border-radius:var(--radius-md);border:1px solid var(--color-line-2);background:var(--color-ink-2)}
+.clock-strip .clock__time{font-size:clamp(2.4rem,2rem + 2vw,3.6rem)}
+@media (max-width:900px){.locs{grid-template-columns:minmax(0,1fr)}.loc{min-height:340px}}
+.glass__coin{position:absolute;top:18px;right:18px;width:56px;height:56px;border-radius:50%;box-shadow:0 8px 20px rgb(8 9 11 / .6)}
+.ig__handles{display:flex;flex-wrap:wrap;gap:8px}
+.ig__handles .btn{height:44px;padding:0 16px}
+.card__cap .mono{display:block;margin-bottom:6px;color:var(--color-soft)}
+.foot__coins{display:flex}
+.foot__coins img{width:34px;height:34px;border-radius:50%;margin-left:-8px;box-shadow:0 0 0 2px var(--color-ink-2)}
+.foot__coins img:first-child{margin-left:0}
+.chip img{flex:none}
+@media (max-width:600px){#soundBtn span,#playBtn span{display:none}.hero__tools .chip{padding:0 11px}.hero__tools{right:var(--gutter)}}
 /* reveal (JS only) */
 .js .rv{opacity:0;transform:translateY(40px)}
 
@@ -413,19 +503,19 @@ html:not(.js) .loader{display:none}
 
 <div class="loader" aria-hidden="true">
   <div class="loader__coin">
-    <svg viewBox="0 0 200 200"><path id="lp" d="M100 100 m-92 0 a92 92 0 1 1 184 0 a92 92 0 1 1 -184 0" fill="none"/><text font-family="Geist Mono, monospace" font-size="9" letter-spacing="3.2" fill="#afafaf"><textPath href="#lp">THE VERZISH.COM · VOLUME 3.0 · ALWAYS ON TOP · NORTH NAZIMABAD ·</textPath></text></svg>
-    <img src="logo.webp" alt="">
+    <svg viewBox="0 0 200 200"><path id="lp" d="M100 100 m-92 0 a92 92 0 1 1 184 0 a92 92 0 1 1 -184 0" fill="none"/><text font-family="Geist Mono, monospace" font-size="9" letter-spacing="3.2" fill="#afafaf"><textPath href="#lp">THE VERZISH.COM · VOL 1.0 · VOL 2.0 · VOL 3.0 · ALWAYS ON TOP ·</textPath></text></svg>
+    <img src="mark.webp" alt="">
   </div>
   <div class="loader__count"><span id="lc">0</span></div>
-  <div class="loader__cap mono">North Nazimabad<br>Block H · 2nd floor</div>
+  <div class="loader__cap mono">Karachi<br>3 branches · unisex</div>
 </div>
 
 <header class="nav" id="nav">
-  <a href="#top" class="brand" aria-label="The Verzish.com 3.0 home"><img src="logo.webp" alt="" width="40" height="40">Verzish <b>3.0</b></a>
+  <a href="#top" class="brand" aria-label="The Verzish.com home"><img src="mark.webp" alt="" width="40" height="40">Verzish <b>.com</b></a>
   <ul class="nav__links">
-    <li><a href="#floor">The floor</a></li>
+    <li><a href="#branches">Branches</a></li>
+    <li><a href="#floor">The floors</a></li>
     <li><a href="#studio">Studio</a></li>
-    <li><a href="#walls">Walls</a></li>
     <li><a href="#story">Story</a></li>
     <li><a href="#visit">Visit</a></li>
   </ul>
@@ -433,22 +523,20 @@ html:not(.js) .loader{display:none}
   <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
 </header>
 <nav class="menu" id="menu" aria-label="Mobile">
-  <a href="#floor">Floor <small>01</small></a>
-  <a href="#studio">Studio <small>02</small></a>
-  <a href="#walls">Walls <small>03</small></a>
-  <a href="#story">Story <small>04</small></a>
-  <a href="#join">Fees <small>05</small></a>
-  <a href="#visit">Visit <small>06</small></a>
+  <a href="#branches">Branches <small>01</small></a>
+  <a href="#floor">The floors <small>02</small></a>
+  <a href="#join">Fees <small>03</small></a>
+  <a href="#visit">Visit <small>04</small></a>
+  <a class="menu__call" href="tel:+923333138451">Call 0333-3138451</a>
 </nav>
 
 <main id="main">
 <!-- HERO -->
-<section class="hero" id="top" aria-label="Welcome to The Verzish.com 3.0">
+<section class="hero" id="top" aria-label="The Verzish.com — unisex gyms in Karachi">
   <div class="hero__media">
     <img class="hero__poster" src="hero-poster.webp" alt="">
-    <video class="hero__video" muted loop playsinline autoplay preload="auto" poster="hero-poster.webp" aria-label="48-second walkthrough of the Verzish 3.0 gym floor">
+    <video class="hero__video" muted playsinline autoplay preload="auto" poster="hero-poster.webp" aria-label="Walkthrough reels of the Verzish branches">
       <source src="hero.mp4" type="video/mp4">
-      <source src="hero.webm" type="video/webm">
     </video>
     <div class="hero__tone"></div>
     <div class="hero__wash"></div>
@@ -459,31 +547,30 @@ html:not(.js) .loader{display:none}
   </div>
   <div class="hero__mark" aria-hidden="true">
     <svg class="hero__web web-svg" data-rings="5" data-spokes="10" viewBox="-110 -110 220 220"></svg>
-    <div class="hero__coin"><img src="logo.webp" alt=""></div>
+    <div class="hero__coin"><img src="mark.webp" alt=""></div>
   </div>
   <div class="hero__tools">
+    <button class="chip" id="reelBtn" aria-label="Switch branch reel"><img id="reelCoin" src="logo-v3.webp" alt="" width="20" height="20" style="width:20px;height:20px;border-radius:50%"><span id="reelLbl">Now: Vol 3.0</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg></button>
     <button class="chip" id="soundBtn" aria-pressed="false" aria-label="Turn reel sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path id="sndIco" d="M17 9l5 6M22 9l-5 6"/></svg><span id="sndLbl">Sound off</span></button>
     <button class="chip" id="playBtn" aria-label="Pause video"><svg viewBox="0 0 24 24" fill="currentColor"><path id="playIco" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span>Reel</span></button>
   </div>
   <div class="hero__inner wrap">
     <div class="hero__eyebrow">
-      <span class="tag"><span class="dot"></span>Open 24 hours</span>
-      <span class="tag">Unisex gym</span>
-      <span class="tag">Block H · North Nazimabad</span>
+      <span class="tag"><span class="dot"></span>3 branches in Karachi</span>
+      <span class="tag">Unisex gyms</span>
+      <span class="tag">FB Area · Johar · North Nazimabad</span>
     </div>
     <h1 class="hero__title" aria-label="Always on top">
       <span class="line split">Always</span>
       <span class="line split glow">On top.</span>
     </h1>
     <div class="hero__row">
-      <p class="hero__sub">The Verzish.com <strong>Volume 3.0</strong> — our third branch. Second floor, Street 5, near Ahbab Sweets. <strong>Step in, show up, dominate.</strong></p>
+      <p class="hero__sub"><strong>The Verzish.com</strong> — three unisex gyms across Karachi, from Volume 1.0 in FB Area to the new <strong>3.0</strong> in North Nazimabad. Step in, show up, dominate.</p>
       <div class="hero__ctas">
-        <a class="btn btn--solid mag" href="https://wa.me/923333138451?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20details%20about%20Verzish%203.0%20membership." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c0-.1-.2-.2-.4-.3Z"/></svg>
+        <a class="btn btn--solid mag" href="#branches">Find your branch</a>
+        <a class="btn btn--ghost mag" href="https://wa.me/923333138451?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20details%20about%20The%20Verzish.com." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c0-.1-.2-.2-.4-.3Z"/></svg>
           WhatsApp us</a>
-        <a class="btn btn--ghost mag" href="tel:+923333138451">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-          0333-3138451</a>
       </div>
     </div>
   </div>
@@ -493,24 +580,105 @@ html:not(.js) .loader{display:none}
 <!-- MARQUEE -->
 <section class="marquee" aria-label="Words from our walls">
   <div class="marquee__row" data-dir="-1"></div>
-  <div class="marquee__row marquee__row--out" data-dir="1"></div>
 </section>
 
 <!-- FACTS -->
 <section class="facts wrap" aria-labelledby="facts-h">
   <div class="facts__head">
-    <h2 id="facts-h" class="rv">From a dream<br>to the third floor<br>of the family.</h2>
-    <p class="rv">From a dream to our first branch. From one branch to another. Verzish 3.0 is the newest chapter — a full strength floor and a separate studio, open around the clock in North Nazimabad.</p>
+    <h2 id="facts-h" class="rv">One name.<br>Three volumes.</h2>
+    <p class="rv">From a dream to our first branch. From one branch to another. The Verzish.com started with Volume 1.0 in FB Area, grew into Gulistan-e-Johar with 2.0, and opened 3.0 in North Nazimabad — each one darker, bigger and better equipped than the last.</p>
   </div>
   <div class="facts__grid">
-    <div class="slab rv"><span class="mono">Hours a day</span><div><div class="slab__num"><span class="count" data-to="24">0</span><sup>/7</sup></div><p>Open 24 hours. Train before Fajr or after midnight.</p></div></div>
-    <div class="slab rv"><span class="mono">Volume</span><div><div class="slab__num"><span class="count" data-to="3" data-dec="1">0</span></div><p>Third Verzish branch in Karachi, after FB Area and Johar.</p></div></div>
-    <div class="slab rv"><span class="mono">Zones</span><div><div class="slab__num"><span class="count" data-to="2">0</span></div><p>Main strength floor plus a dedicated turf studio.</p></div></div>
-    <div class="slab rv"><span class="mono">Floor</span><div><div class="slab__num"><span class="count" data-to="2">0</span><sup>nd</sup></div><p>Plot B-122, Block H — up the stairs on Street 5.</p></div></div>
+    <div class="slab rv"><span class="mono">Branches</span><div><div class="slab__num"><span class="count" data-to="3">0</span></div><p>FB Area, Gulistan-e-Johar and North Nazimabad. All unisex.</p></div></div>
+    <div class="slab rv"><span class="mono">Vol 3.0 hours</span><div><div class="slab__num"><span class="count" data-to="24">0</span><sup>/7</sup></div><p>Our newest branch is open around the clock.</p></div></div>
+    <div class="slab rv"><span class="mono">Google · Vol 1.0</span><div><div class="slab__num"><span class="count" data-to="4.3" data-dec="1">0</span><sup>★</sup></div><p>Rated 4.3 from 15 reviews on Google.</p></div></div>
+    <div class="slab rv"><span class="mono">On Instagram</span><div><div class="slab__num"><span class="count" data-to="3.3" data-dec="1">0</span><sup>K+</sup></div><p>Followers across the three branch pages.</p></div></div>
   </div>
 </section>
 
-<!-- UNDER THE WEB -->
+<!-- BRANCHES -->
+<section class="branches wrap" id="branches" aria-labelledby="branches-h">
+  <div class="sec-head"><h2 id="branches-h" class="rv">Pick your volume.</h2><p class="rv">Same name, same standard, three floors across Karachi. Choose the one closest to you.</p></div>
+  <div class="tabs rv" role="tablist" aria-label="Branches">
+    <button class="tab" role="tab" id="tab-3" aria-controls="bp-3" aria-selected="true"><img src="logo-v3.webp" alt="" width="34" height="34"><span><b>Vol 3.0</b>North Nazimabad</span></button>
+    <button class="tab" role="tab" id="tab-2" aria-controls="bp-2" aria-selected="false" tabindex="-1"><img src="logo-v2.webp" alt="" width="34" height="34"><span><b>Vol 2.0</b>Gulistan-e-Johar</span></button>
+    <button class="tab" role="tab" id="tab-1" aria-controls="bp-1" aria-selected="false" tabindex="-1"><img src="logo-v1.webp" alt="" width="34" height="34"><span><b>Vol 1.0</b>FB Area</span></button>
+  </div>
+
+  <div class="bpanel" role="tabpanel" id="bp-3" aria-labelledby="tab-3">
+    <div class="bpanel__media" data-cursor="view">
+      <img class="bpanel__main" src="web.webp" alt="LED spiderweb ceiling at Verzish 3.0" loading="lazy">
+      <img class="bpanel__coin" src="logo-v3.webp" alt="The Verzish.com Vol.3 logo" loading="lazy">
+      <div class="bpanel__thumbs"><img src="rack.webp" alt="" loading="lazy"><img src="studio_wide.webp" alt="" loading="lazy"><img src="plates.webp" alt="" loading="lazy"></div>
+    </div>
+    <div class="bpanel__info">
+      <span class="tag"><span class="dot"></span>Newest · open 24 hours</span>
+      <h3>Vol 3.0<small>North Nazimabad</small></h3>
+      <p>Black steel and white marble under an LED web ceiling, plus a separate turf studio with backlit mirrors.</p>
+      <dl class="bpanel__dl">
+        <div><dt>Address</dt><dd>Plot # B-122, Block H, North Nazimabad · 2nd floor, Street 5, near Ahbab Sweets</dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+923333138451">0333-3138451</a> · <a href="tel:+923332832841">0333-2832841</a></dd></div>
+        <div><dt>Hours</dt><dd>Open 24 hours</dd></div>
+      </dl>
+      <div class="kit"><span>LED web ceiling</span><span>Turf studio</span><span>Hammer Strength plates</span><span>Cardio deck</span><span>Lockers</span></div>
+      <div class="bpanel__acts">
+        <a class="btn btn--solid mag" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Verzish.com%203.0%20B-122%20Block%20H%20North%20Nazimabad%20Karachi" target="_blank" rel="noopener">Directions</a>
+        <a class="btn btn--ghost" href="https://wa.me/923333138451?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20details%20about%20Verzish%203.0%20North%20Nazimabad." target="_blank" rel="noopener">WhatsApp 3.0</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bpanel" role="tabpanel" id="bp-2" aria-labelledby="tab-2" hidden>
+    <div class="bpanel__media" data-cursor="view">
+      <img class="bpanel__main" src="j_sign.webp" alt="Glowing The Verzish.com sign at Verzish 2.0" loading="lazy">
+      <img class="bpanel__coin" src="logo-v2.webp" alt="The Verzish.com Vol.2 logo" loading="lazy">
+      <div class="bpanel__thumbs"><img src="j_ropes.webp" alt="" loading="lazy"><img src="j_desk.webp" alt="" loading="lazy"><img src="j_hustle.webp" alt="" loading="lazy"></div>
+    </div>
+    <div class="bpanel__info">
+      <span class="tag"><span class="dot"></span>Gulistan-e-Johar</span>
+      <h3>Vol 2.0<small>Gulistan-e-Johar</small></h3>
+      <p>Lightning-bolt LED strips over wood floors and a green turf lane with battle ropes. Members call out the separate timings for men and women.</p>
+      <dl class="bpanel__dl">
+        <div><dt>Address</dt><dd>Plot # B-191, Block 11, Gulistan-e-Johar, Karachi</dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+923333138451">0333-3138451</a> · <a href="tel:+923152078581">0315-2078581</a></dd></div>
+        <div><dt>Hours</dt><dd>Opens 6 AM · ask the desk for ladies' and gents' timings</dd></div>
+      </dl>
+      <div class="kit"><span>Turf lane + battle ropes</span><span>Wood + turf floors</span><span>Full dumbbell rack</span><span>Cardio zone</span><span>Plate-loaded machines</span></div>
+      <div class="bpanel__acts">
+        <a class="btn btn--solid mag" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Verzish.com%202.0%20B-191%20Block%2011%20Gulistan-e-Johar%20Karachi" target="_blank" rel="noopener">Directions</a>
+        <a class="btn btn--ghost" href="https://wa.me/923333138451?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20details%20about%20Verzish%202.0%20Gulistan-e-Johar." target="_blank" rel="noopener">WhatsApp 2.0</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/theverzishdotcom2.0/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bpanel" role="tabpanel" id="bp-1" aria-labelledby="tab-1" hidden>
+    <div class="bpanel__media" data-cursor="view">
+      <img class="bpanel__main bpanel__main--wide" src="v1_hex.webp" alt="Hexagon LED lights at Verzish 1.0" loading="lazy">
+      <img class="bpanel__coin" src="logo-v1.webp" alt="The Verzish.com Vol.1 logo" loading="lazy">
+      <div class="bpanel__thumbs"><img src="v1_front.webp" alt="" loading="lazy"><img src="v1_bikes.webp" alt="" loading="lazy"><img src="v1_bells.webp" alt="" loading="lazy"></div>
+    </div>
+    <div class="bpanel__info">
+      <span class="tag"><span class="dot"></span>Where it started</span>
+      <h3>Vol 1.0<small>FB Area</small></h3>
+      <p>The original Verzish. Weekly classes, personal training, and a 4.3★ rating on Google from 15 reviews.</p>
+      <dl class="bpanel__dl">
+        <div><dt>Address</dt><dd>Plot No. B-69, Block 17, Federal B Area, Karachi</dd></div>
+        <div><dt>Contact</dt><dd><a href="tel:+923333138451">0333-3138451</a> · <a href="mailto:theverzish@gmail.com">theverzish@gmail.com</a></dd></div>
+        <div><dt>Hours</dt><dd>Call or WhatsApp for current timings</dd></div>
+      </dl>
+      <div class="kit"><span>Weekly classes</span><span>Personal training</span><span>Ladies' demo classes</span><span>Turf cardio area</span></div>
+      <div class="bpanel__acts">
+        <a class="btn btn--solid mag" href="https://www.google.com/maps/search/?api=1&amp;query=TheVerzish.com%20B-69%20Block%2017%20FB%20Area%20Karachi" target="_blank" rel="noopener">Directions</a>
+        <a class="btn btn--ghost" href="https://wa.me/923333138451?text=Assalam%20o%20Alaikum%2C%20I%27d%20like%20details%20about%20Verzish%201.0%20FB%20Area." target="_blank" rel="noopener">WhatsApp 1.0</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/theverzishdotcom1.0/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNDER THE WEB (3.0) -->
 <section class="web" id="web" aria-labelledby="web-h">
   <div class="web__pin wrap">
     <div class="web__art">
@@ -522,9 +690,9 @@ html:not(.js) .loader{display:none}
       <svg class="web-svg web-big" data-rings="6" data-spokes="12" viewBox="-110 -110 220 220" aria-hidden="true"></svg>
     </div>
     <div class="web__copy">
-      <span class="tag"><span class="dot"></span>Look up</span>
+      <span class="tag"><span class="dot"></span>Vol 3.0 · look up</span>
       <h2 id="web-h">Train under<br>the web.</h2>
-      <p>The ceiling is strung with a web of white LED light, hung over black steel and polished white marble. Every set feels like a main event.</p>
+      <p>At 3.0 the ceiling is strung with a web of white LED light, hung over black steel and polished white marble. Every set feels like a main event.</p>
       <ul class="web__list">
         <li><span>Ceiling</span><span>LED web lighting</span></li>
         <li><span>Floor</span><span>White marble + rubber lifting zones</span></li>
@@ -538,49 +706,49 @@ html:not(.js) .loader{display:none}
 <!-- FLOOR BENTO -->
 <section class="floor wrap" id="floor" aria-labelledby="floor-h">
   <div class="sec-head">
-    <h2 id="floor-h" class="rv">The floor.</h2>
-    <p class="rv">Every photo here is from Verzish 3.0 itself — no stock. Hover (or scroll on your phone) to switch the lights on.</p>
+    <h2 id="floor-h" class="rv">Inside the floors.</h2>
+    <p class="rv">Every photo is from our own branches — no stock. Hover (or scroll on your phone) to switch the lights on.</p>
   </div>
   <div class="bento">
-    <figure class="tile t1 rv" data-cursor="view"><img src="rack.webp" alt="Dumbbell rack under the red Verzish sign" loading="lazy"><figcaption><h3>Free<br>weights</h3><span class="mono">Full rack</span></figcaption></figure>
-    <figure class="tile t2 rv" data-cursor="view"><img src="machine.webp" alt="Plate-loaded machines on white marble" loading="lazy"><figcaption><h3>Plate-loaded</h3><span class="mono">Machines</span></figcaption></figure>
-    <div class="tile tile--word t3 rv"><span class="mono">On the wall</span><h3>One<br>more<br>rep.</h3></div>
-    <figure class="tile t4 rv" data-cursor="view"><img src="plates.webp" alt="Coloured Hammer Strength bumper plates" loading="lazy"><figcaption><h3>Bumpers</h3><span class="mono">Hammer</span></figcaption></figure>
-    <figure class="tile t5 rv" data-cursor="view"><img src="transform.webp" alt="Cable station under the Transform wall" loading="lazy"><figcaption><h3>Cables</h3><span class="mono">Transform wall</span></figcaption></figure>
-    <figure class="tile t6 rv" data-cursor="view"><img src="discipline.webp" alt="Cardio and stair climber under the Discipline wall" loading="lazy"><figcaption><h3>Cardio deck</h3><span class="mono">Discipline wall</span></figcaption></figure>
-    <figure class="tile t7 rv" data-cursor="view"><img src="bikes.webp" alt="Spin bikes" loading="lazy"><figcaption><h3>Bikes</h3><span class="mono">Spin row</span></figcaption></figure>
-    <figure class="tile t8 rv" data-cursor="view"><img src="lockers.webp" alt="Numbered lockers outside the changing room" loading="lazy"><figcaption><h3>Lockers</h3><span class="mono">Changing room</span></figcaption></figure>
+    <figure class="tile t1 rv" data-cursor="view"><img src="rack.webp" alt="Dumbbell rack under the red Verzish sign at 3.0" loading="lazy"><figcaption><h3>Free<br>weights</h3><span class="mono">Vol 3.0</span></figcaption></figure>
+    <figure class="tile t2 rv" data-cursor="view"><img src="j_sign.webp" alt="Glowing Verzish sign at 2.0" loading="lazy"><figcaption><h3>The sign</h3><span class="mono">Vol 2.0</span></figcaption></figure>
+    <div class="tile tile--word t3 rv"><span class="mono">On the wall · 2.0</span><h3>No<br>short<br>cuts.</h3></div>
+    <figure class="tile t4 rv" data-cursor="view"><img src="plates.webp" alt="Coloured Hammer Strength bumper plates" loading="lazy"><figcaption><h3>Bumpers</h3><span class="mono">Vol 3.0</span></figcaption></figure>
+    <figure class="tile t5 rv" data-cursor="view"><img src="j_ropes.webp" alt="Turf lane with battle ropes at 2.0" loading="lazy"><figcaption><h3>Turf lane</h3><span class="mono">Vol 2.0</span></figcaption></figure>
+    <figure class="tile t6 rv" data-cursor="view"><img src="j_hustle.webp" alt="Hustle wall over wood floors at 2.0" loading="lazy"><figcaption><h3>Hustle row</h3><span class="mono">Vol 2.0</span></figcaption></figure>
+    <figure class="tile t7 rv" data-cursor="view"><img src="transform.webp" alt="Cable station under the Transform wall at 3.0" loading="lazy"><figcaption><h3>Cables</h3><span class="mono">Vol 3.0</span></figcaption></figure>
+    <figure class="tile t8 rv" data-cursor="view"><img src="j_cardio.webp" alt="Cardio zone at 2.0" loading="lazy"><figcaption><h3>Cardio</h3><span class="mono">Vol 2.0</span></figcaption></figure>
   </div>
 </section>
 
 <!-- HORIZONTAL TOUR -->
 <section class="tour" aria-labelledby="tour-h">
-  <div class="wrap sec-head"><h2 id="tour-h" class="rv">Walk the floor.</h2><p class="rv mono">Scroll → station by station</p></div>
+  <div class="wrap sec-head"><h2 id="tour-h" class="rv">Walk the floors.</h2><p class="rv mono">Scroll → station by station</p></div>
   <div class="tour__track">
-    <article class="card" data-cursor="view"><img src="welcome.webp" alt="Welcome wall at the entrance" loading="lazy"><span class="card__n">01</span><div class="card__cap"><h3>The welcome</h3><p>Up the stairs, second floor. Front desk straight ahead.</p></div></article>
-    <article class="card" data-cursor="view"><img src="painzone.webp" alt="The Pain Zone sign" loading="lazy"><span class="card__n">02</span><div class="card__cap"><h3>The pain zone</h3><p>Where the big lifts happen.</p></div></article>
-    <article class="card" data-cursor="view"><img src="dumbbells.webp" alt="Dumbbell rack against ribbed wall panels" loading="lazy"><span class="card__n">03</span><div class="card__cap"><h3>Dumbbells</h3><p>Rows of them. Grab and go.</p></div></article>
-    <article class="card" data-cursor="view"><img src="platetree.webp" alt="Plate tree with Verzish logo plates" loading="lazy"><span class="card__n">04</span><div class="card__cap"><h3>Branded iron</h3><p>Verzish-logo plates on every tree.</p></div></article>
-    <article class="card" data-cursor="view"><img src="bench.webp" alt="Benches under the LED web" loading="lazy"><span class="card__n">05</span><div class="card__cap"><h3>Bench zone</h3><p>Flat, incline, decline — under the web.</p></div></article>
-    <article class="card" data-cursor="view"><img src="machine2.webp" alt="Plate-loaded row machine" loading="lazy"><span class="card__n">06</span><div class="card__cap"><h3>Back day</h3><p>Plate-loaded rows and pulldowns.</p></div></article>
-    <article class="card" data-cursor="view"><img src="treadmill.webp" alt="Treadmill lit in red" loading="lazy"><span class="card__n">07</span><div class="card__cap"><h3>Cardio</h3><p>Treadmills, stair climber, bikes.</p></div></article>
-    <article class="card" data-cursor="view"><img src="cable.webp" alt="Cable attachment close-up" loading="lazy"><span class="card__n">08</span><div class="card__cap"><h3>Details</h3><p>Attachments for every cable move.</p></div></article>
-    <article class="card card--end"><span class="mono" style="color:var(--color-steel)">End of tour</span><h3>See it<br>in person.</h3><a class="btn mag" href="#visit">Get directions</a></article>
+    <article class="card" data-cursor="view"><img src="j_desk.webp" alt="Front desk at Verzish 2.0" loading="lazy"><span class="card__n">01</span><div class="card__cap"><span class="mono">Vol 2.0</span><h3>Front desk</h3><p>Wood panels and the V on the wall.</p></div></article>
+    <article class="card" data-cursor="view"><img src="painzone.webp" alt="The Pain Zone sign at 3.0" loading="lazy"><span class="card__n">02</span><div class="card__cap"><span class="mono">Vol 3.0</span><h3>The pain zone</h3><p>Where the big lifts happen.</p></div></article>
+    <article class="card" data-cursor="view"><img src="j_turf.webp" alt="Turf floor under white LED lines at 2.0" loading="lazy"><span class="card__n">03</span><div class="card__cap"><span class="mono">Vol 2.0</span><h3>Turf floor</h3><p>Green turf, white light lines overhead.</p></div></article>
+    <article class="card" data-cursor="view"><img src="dumbbells.webp" alt="Dumbbell rack at 3.0" loading="lazy"><span class="card__n">04</span><div class="card__cap"><span class="mono">Vol 3.0</span><h3>Dumbbells</h3><p>Rows of them. Grab and go.</p></div></article>
+    <article class="card" data-cursor="view"><img src="j_mirror.webp" alt="Bench under a glowing round mirror at 2.0" loading="lazy"><span class="card__n">05</span><div class="card__cap"><span class="mono">Vol 2.0</span><h3>Bench corner</h3><p>Under the glowing ring mirror.</p></div></article>
+    <article class="card" data-cursor="view"><img src="bench.webp" alt="Benches under the LED web at 3.0" loading="lazy"><span class="card__n">06</span><div class="card__cap"><span class="mono">Vol 3.0</span><h3>Bench zone</h3><p>Flat, incline, decline — under the web.</p></div></article>
+    <article class="card" data-cursor="view"><img src="j_legpress.webp" alt="Leg press at 2.0" loading="lazy"><span class="card__n">07</span><div class="card__cap"><span class="mono">Vol 2.0</span><h3>Leg day</h3><p>Plate-loaded leg press and hack squat.</p></div></article>
+    <article class="card" data-cursor="view"><img src="treadmill.webp" alt="Treadmill lit in red at 3.0" loading="lazy"><span class="card__n">08</span><div class="card__cap"><span class="mono">Vol 3.0</span><h3>Cardio</h3><p>Treadmills, stair climber, bikes.</p></div></article>
+    <article class="card card--end"><span class="mono" style="color:var(--color-steel)">End of tour</span><h3>See it<br>in person.</h3><a class="btn mag" href="#visit">Find a branch</a></article>
   </div>
 </section>
 
-<!-- STUDIO -->
+<!-- STUDIO (3.0) -->
 <section class="studio" id="studio" aria-labelledby="studio-h">
   <div class="wrap studio__grid">
     <div class="studio__reel rv">
       <div class="studio__glow hex"></div>
       <div class="studio__frame hex"></div>
-      <div class="studio__video hex"><img src="studio_wide.webp" alt=""><video muted loop playsinline autoplay preload="metadata" aria-label="Walkthrough of the Verzish studio"><source src="studio.mp4" type="video/mp4"></video></div>
+      <div class="studio__video hex"><img src="studio_wide.webp" alt=""><video muted loop playsinline autoplay preload="metadata" aria-label="Walkthrough of the Verzish 3.0 studio"><source src="studio.mp4" type="video/mp4"></video></div>
     </div>
     <div class="studio__copy">
-      <span class="tag rv"><span class="dot"></span>Zone two</span>
+      <span class="tag rv"><span class="dot"></span>Vol 3.0 · zone two</span>
       <h2 id="studio-h" class="rv">Looking for the<br>perfect studio<br>in Nazimabad?</h2>
-      <p class="rv">A separate room with turf flooring, mats laid out and backlit mirrors on every wall. Built for functional work, core, mobility and conditioning.</p>
+      <p class="rv">At 3.0, a separate room with turf flooring, mats laid out and backlit mirrors on every wall. Built for functional work, core, mobility and conditioning.</p>
       <div class="kit rv"><span>Turf floor</span><span>Mats</span><span>Kettlebells</span><span>Medicine balls</span><span>Dumbbells</span><span>Squat racks</span><span>Hammer plates</span><span>Swiss balls</span><span>Hack squat</span></div>
       <div class="hexrow">
         <figure class="hex rv" data-cursor="view"><div class="hex"><img src="studio_balls.webp" alt="Kettlebells and medicine balls" loading="lazy"></div></figure>
@@ -594,26 +762,26 @@ html:not(.js) .loader{display:none}
 
 <!-- WALLS -->
 <section class="walls wrap" id="walls" aria-labelledby="walls-h">
-  <div class="sec-head"><h2 id="walls-h" class="rv">Walls that talk.</h2><p class="rv">The words painted inside Verzish 3.0. Read them between sets.</p></div>
+  <div class="sec-head"><h2 id="walls-h" class="rv">Walls that talk.</h2><p class="rv">The words painted across our branches. Read them between sets.</p></div>
   <div class="stack">
-    <article class="slide"><img src="transform.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 01 · Cable station</span><h3>Trans<span class="o">form.</span></h3><div class="slide__foot"><p>Painted above the cable column — the whole point of showing up.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
-    <article class="slide"><img src="discipline.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 02 · Cardio deck</span><h3>Disci<span class="o">pline.</span></h3><div class="slide__foot"><p>Runs the length of the cardio row. Motivation fades. This doesn't.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
-    <article class="slide slide--white"><div class="slide__in"><span class="mono">Wall 03 · Mural</span><h3>Pain is fuel.<br><span class="o">Results are forever.</span></h3><div class="slide__foot"><p>The mural everyone takes a photo with.</p><span class="mono">Main floor</span></div></div></article>
-    <article class="slide"><img src="corridor.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 04 · The zone</span><h3>One more <span class="o">rep.</span></h3><div class="slide__foot"><p>Then another one.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
+    <article class="slide"><img src="transform.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Vol 3.0 · cable station</span><h3>Trans<span class="o">form.</span></h3><div class="slide__foot"><p>Painted above the cable column — the whole point of showing up.</p><span class="tag"><span class="dot"></span>North Nazimabad</span></div></div></article>
+    <article class="slide"><img src="j_hustle.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Vol 2.0 · main floor</span><h3>Hus<span class="o">tle.</span></h3><div class="slide__foot"><p>Lit in lightning-bolt LED over the wood floor.</p><span class="tag"><span class="dot"></span>Gulistan-e-Johar</span></div></div></article>
+    <article class="slide slide--white"><div class="slide__in"><span class="mono">Vol 3.0 · mural</span><h3>Pain is fuel.<br><span class="o">Results are forever.</span></h3><div class="slide__foot"><p>The mural everyone takes a photo with.</p><span class="mono">North Nazimabad</span></div></div></article>
+    <article class="slide"><img src="j_painzone.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Vol 2.0 · the zone</span><h3>Welcome to<br><span class="o">the pain zone.</span></h3><div class="slide__foot"><p>Under the glowing V. No shortcuts past this point.</p><span class="tag"><span class="dot"></span>Gulistan-e-Johar</span></div></div></article>
   </div>
 </section>
 
 <!-- STORY -->
 <section class="story" id="story" aria-labelledby="story-h">
-  <div class="story__bg" aria-hidden="true"><img src="platetree.webp" alt="" loading="lazy"></div>
+  <div class="story__bg" aria-hidden="true"><img src="j_wide.webp" alt="" loading="lazy"></div>
   <div class="wrap">
     <span class="tag rv">The Verzish.com · Karachi</span>
     <h2 id="story-h" class="sr-only">Our story</h2>
     <blockquote class="rv" style="margin-top:24px">From a dream to our first branch. <span>From one branch to another.</span> Today, a new chapter.</blockquote>
     <div class="timeline">
-      <div class="glass rv"><div class="glass__v">1.0</div><h3>FB Area</h3><p>B-69, Block 17, Federal B Area. Where it started.</p></div>
-      <div class="glass rv"><div class="glass__v">2.0</div><h3>Gulistan-e-Johar</h3><p>The second branch. The family grows.</p></div>
-      <div class="glass glass--now rv"><div class="glass__v">3.0</div><h3>North Nazimabad</h3><p>B-122, Block H. Unisex, 24 hours, strength floor + studio.</p><span class="tag" style="margin-top:14px"><span class="dot"></span>You are here</span></div>
+      <div class="glass rv"><img class="glass__coin" src="logo-v1.webp" alt="" loading="lazy"><div class="glass__v">1.0</div><h3>FB Area</h3><p>B-69, Block 17, Federal B Area. Where it started — 4.3★ on Google.</p></div>
+      <div class="glass rv"><img class="glass__coin" src="logo-v2.webp" alt="" loading="lazy"><div class="glass__v">2.0</div><h3>Gulistan-e-Johar</h3><p>B-191, Block 11. Darker, bigger, lit in lightning-bolt LED.</p></div>
+      <div class="glass glass--now rv"><img class="glass__coin" src="logo-v3.webp" alt="" loading="lazy"><div class="glass__v">3.0</div><h3>North Nazimabad</h3><p>B-122, Block H. Open 24 hours, strength floor + studio.</p><span class="tag" style="margin-top:14px"><span class="dot"></span>Newest</span></div>
     </div>
   </div>
 </section>
@@ -624,13 +792,17 @@ html:not(.js) .loader{display:none}
     <div class="join__left">
       <span class="tag"><span class="dot"></span>Fees &amp; timings</span>
       <h2 id="join-h">Ask the front desk. Get it on WhatsApp.</h2>
-      <p>Monthly fees and packages come straight from the gym so you always get the current price. Tap what you want to know — we'll write the message for you.</p>
-      <div class="picks" role="group" aria-label="What do you want to know">
+      <p>Fees and packages come straight from the branch, so you always get the current price. Pick your branch and what you want to know — we'll write the message.</p>
+      <div class="picks picks--branch" role="radiogroup" aria-label="Which branch">
+        <button class="pick" role="radio" aria-checked="true" aria-pressed="true" data-b="Verzish 3.0 (North Nazimabad)">Vol 3.0 · N. Nazimabad</button>
+        <button class="pick" role="radio" aria-checked="false" aria-pressed="false" data-b="Verzish 2.0 (Gulistan-e-Johar)">Vol 2.0 · Johar</button>
+        <button class="pick" role="radio" aria-checked="false" aria-pressed="false" data-b="Verzish 1.0 (FB Area)">Vol 1.0 · FB Area</button>
+      </div>
+      <div class="picks picks--q" role="group" aria-label="What do you want to know">
         <button class="pick" aria-pressed="true" data-q="monthly membership fee">Monthly fee</button>
-        <button class="pick" aria-pressed="false" data-q="packages (3, 6, 12 months)">Packages</button>
+        <button class="pick" aria-pressed="false" data-q="packages">Packages</button>
         <button class="pick" aria-pressed="false" data-q="ladies' timings">Ladies' timings</button>
         <button class="pick" aria-pressed="false" data-q="gents' timings">Gents' timings</button>
-        <button class="pick" aria-pressed="false" data-q="studio sessions">Studio</button>
         <button class="pick" aria-pressed="false" data-q="personal training">Personal training</button>
         <button class="pick" aria-pressed="false" data-q="visiting the gym for a tour">A visit</button>
       </div>
@@ -649,9 +821,9 @@ html:not(.js) .loader{display:none}
           Send on WhatsApp</a>
         <div class="calls">
           <a class="btn btn--ghost" href="tel:+923333138451">Call 0333-3138451</a>
-          <a class="btn btn--ghost" href="tel:+923332832841">Call 0333-2832841</a>
+          <a class="btn btn--ghost" id="callAlt" href="tel:+923332832841">Call 0333-2832841</a>
         </div>
-        <p class="join__note">Unisex gym. Ask the desk about ladies' and gents' timings.</p>
+        <p class="join__note" id="joinNote">All branches are unisex. Ask the desk about ladies' and gents' timings.</p>
       </div>
     </div>
   </div>
@@ -659,67 +831,84 @@ html:not(.js) .loader{display:none}
 
 <!-- VISIT -->
 <section class="visit wrap" id="visit" aria-labelledby="visit-h">
-  <div class="visit__grid">
-    <div class="visit__addr rv">
-      <img src="sign.webp" alt="" loading="lazy">
-      <span class="tag"><span class="dot"></span>Find us</span>
-      <h2 id="visit-h">Block H,<br>North Nazimabad.</h2>
-      <address><b>Plot # B-122, Block H, North Nazimabad, Karachi.</b><br>2nd floor · Street 5 · near Ahbab Sweets.</address>
-      <a class="btn btn--solid mag" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Verzish.com%203.0%20B-122%20Block%20H%20North%20Nazimabad%20Karachi" target="_blank" rel="noopener">Open in Google Maps</a>
-    </div>
-    <div class="visit__side">
-      <div class="clock rv">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><span class="mono">Karachi time now</span><span class="tag"><span class="dot"></span>Open</span></div>
-        <div class="clock__time" id="clock">--:--</div>
-        <div><div class="clock__bar"></div><div class="clock__labels mono" style="margin-top:8px"><span>00:00</span><span>Open all 24</span><span>24:00</span></div></div>
-      </div>
-      <div class="route rv">
-        <span class="mono">Getting here</span>
-        <ol>
-          <li>Head to Block H, North Nazimabad.</li>
-          <li>Find Street 5 — look for Ahbab Sweets.</li>
-          <li>Plot B-122. Take the stairs to the 2nd floor.</li>
-          <li>Follow the web of light.</li>
-        </ol>
-      </div>
-    </div>
+  <div class="sec-head"><h2 id="visit-h" class="rv">Find your nearest Verzish.</h2><p class="rv">Three branches across Karachi. Tap one for directions.</p></div>
+  <div class="locs">
+    <a class="loc rv" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Verzish.com%203.0%20B-122%20Block%20H%20North%20Nazimabad%20Karachi" target="_blank" rel="noopener" data-cursor="view">
+      <img class="loc__bg" src="sign.webp" alt="" loading="lazy"><img class="loc__coin" src="logo-v3.webp" alt="" loading="lazy">
+      <span class="tag"><span class="dot"></span>Open 24 hours</span>
+      <h3>North<br>Nazimabad</h3><p>Plot # B-122, Block H · 2nd floor, Street 5 · near Ahbab Sweets</p><span class="loc__go">Directions →</span>
+    </a>
+    <a class="loc rv" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Verzish.com%202.0%20B-191%20Block%2011%20Gulistan-e-Johar%20Karachi" target="_blank" rel="noopener" data-cursor="view">
+      <img class="loc__bg" src="j_painzone.webp" alt="" loading="lazy"><img class="loc__coin" src="logo-v2.webp" alt="" loading="lazy">
+      <span class="tag">Opens 6 AM</span>
+      <h3>Gulistan-<br>e-Johar</h3><p>Plot # B-191, Block 11 · 0315-2078581</p><span class="loc__go">Directions →</span>
+    </a>
+    <a class="loc rv" href="https://www.google.com/maps/search/?api=1&amp;query=TheVerzish.com%20B-69%20Block%2017%20FB%20Area%20Karachi" target="_blank" rel="noopener" data-cursor="view">
+      <img class="loc__bg" src="v1_front.webp" alt="" loading="lazy"><img class="loc__coin" src="logo-v1.webp" alt="" loading="lazy">
+      <span class="tag">4.3★ on Google</span>
+      <h3>FB<br>Area</h3><p>Plot No. B-69, Block 17, Federal B Area · 0333-3138451</p><span class="loc__go">Directions →</span>
+    </a>
   </div>
+  <div class="clock-strip rv"><span class="mono">Karachi time now</span><span class="clock__time" id="clock">--:--</span><span class="tag"><span class="dot"></span>Vol 3.0 is open</span></div>
 </section>
 
 <!-- INSTAGRAM -->
 <section class="ig wrap" aria-labelledby="ig-h">
-  <div class="sec-head"><h2 id="ig-h" class="rv">@theverzishdotcom3.0</h2><a class="btn btn--ghost mag" href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener">Follow on Instagram</a></div>
+  <div class="sec-head"><h2 id="ig-h" class="rv">Follow the volumes.</h2>
+    <div class="ig__handles">
+      <a class="btn btn--ghost" href="https://www.instagram.com/theverzishdotcom1.0/" target="_blank" rel="noopener">@…1.0</a>
+      <a class="btn btn--ghost" href="https://www.instagram.com/theverzishdotcom2.0/" target="_blank" rel="noopener">@…2.0</a>
+      <a class="btn btn--solid" href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener">@…3.0</a>
+    </div>
+  </div>
   <div class="ig__grid">
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="web2.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_hex.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_rack.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_hack.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_shelf.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_rack2.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Verzish 3.0 on Instagram"><img src="web2.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom2.0/" target="_blank" rel="noopener" aria-label="Verzish 2.0 on Instagram"><img src="j_floor.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Verzish 3.0 on Instagram"><img src="studio_hex.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom2.0/" target="_blank" rel="noopener" aria-label="Verzish 2.0 on Instagram"><img src="j_machines.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Verzish 3.0 on Instagram"><img src="studio_rack.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom2.0/" target="_blank" rel="noopener" aria-label="Verzish 2.0 on Instagram"><img src="j_rack.webp" alt="" loading="lazy"></a>
   </div>
 </section>
 </main>
 
 <footer class="foot">
-  <svg class="foot__web web-svg" data-rings="5" data-spokes="10" viewBox="-110 -110 220 220" aria-hidden="true"></svg>
   <div class="wrap">
-    <img class="foot__coin" src="logo.webp" alt="The Verzish.com Vol.3 logo" loading="lazy" width="150" height="150">
-    <div class="foot__big">Always<span>on top.</span></div>
-    <div class="foot__row">
-      <div><h4>Verzish 3.0</h4><p>Plot # B-122, Block H</p><p>North Nazimabad, Karachi</p><p>2nd floor · Street 5</p></div>
-      <div><h4>Call</h4><a href="tel:+923333138451">0333-3138451</a><a href="tel:+923332832841">0333-2832841</a><a href="https://wa.me/923333138451" target="_blank" rel="noopener">WhatsApp</a></div>
-      <div><h4>Branches</h4><p>1.0 · FB Area</p><p>2.0 · Gulistan-e-Johar</p><p>3.0 · North Nazimabad</p></div>
-      <div><h4>Follow</h4><a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener">Instagram 3.0</a><a href="#top">Back to top ↑</a></div>
+    <div class="foot__in">
+      <div class="foot__brand"><img src="mark.webp" alt="The Verzish.com logo" width="40" height="40" loading="lazy"><div><strong>The Verzish.com</strong><span>Unisex gyms · FB Area · Gulistan-e-Johar · North Nazimabad</span></div></div>
+      <div class="foot__coins" aria-hidden="true"><img src="logo-v1.webp" alt="" loading="lazy"><img src="logo-v2.webp" alt="" loading="lazy"><img src="logo-v3.webp" alt="" loading="lazy"></div>
+      <nav class="foot__links" aria-label="Footer">
+        <a href="tel:+923333138451">0333-3138451</a>
+        <a href="mailto:theverzish@gmail.com">theverzish@gmail.com</a>
+        <a href="https://wa.me/923333138451" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#branches">Branches</a>
+        <a href="#top">Top ↑</a>
+      </nav>
     </div>
-    <div class="foot__legal mono"><span>© <span id="yr">2026</span> The Verzish.com 3.0 · Unisex gym · Open 24 hours</span><a href="https://nexlyr.solutions" target="_blank" rel="noopener">Site by Nexlyr Solutions</a></div>
+    <div class="foot__legal mono"><span>© <span id="yr">2026</span> The Verzish.com · Vol 1.0 B-69 FB Area · Vol 2.0 B-191 Johar · Vol 3.0 B-122 N. Nazimabad</span><a href="https://nexlyr.solutions" target="_blank" rel="noopener">Site by Nexlyr Solutions</a></div>
   </div>
 </footer>
 
-<nav class="dock" aria-label="Quick contact">
-  <a href="https://wa.me/923333138451" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c0-.1-.2-.2-.4-.3Z"/></svg>WhatsApp</a>
-  <a href="tel:+923333138451"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
-  <a href="https://www.google.com/maps/search/?api=1&amp;query=The%20Verzish.com%203.0%20B-122%20Block%20H%20North%20Nazimabad%20Karachi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Directions</a>
-</nav>
+
+
+<button class="bot-fab" id="botFab" aria-expanded="false" aria-controls="bot"><span class="bot-fab__label">Ask Verzish</span><img src="mark.webp" alt=""><span class="bot-fab__dot" aria-hidden="true"></span><span class="sr-only">Open chat</span></button>
+<section class="bot" id="bot" role="dialog" aria-label="Verzish assistant">
+  <header class="bot__head">
+    <img src="mark.webp" alt="">
+    <div class="bot__title"><strong>Verzish assistant</strong><span><span class="dot"></span>Instant answers · all 3 branches</span></div>
+    <a class="bot__icon" href="https://wa.me/923333138451" target="_blank" rel="noopener" aria-label="WhatsApp the front desk"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c0-.1-.2-.2-.4-.3Z"/></svg></a>
+    <a class="bot__icon" href="tel:+923333138451" aria-label="Call 0333-3138451"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+    <button class="bot__icon" id="botClose" aria-label="Close chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </header>
+  <div class="bot__log" id="botLog" aria-live="polite"></div>
+  <div class="bot__chips" id="botChips"></div>
+  <p class="bot__err" id="botErr" aria-live="polite"></p>
+  <form class="bot__form" id="botForm" novalidate>
+    <label class="sr-only" for="botIn">Type your question</label>
+    <input id="botIn" type="text" placeholder="Ask about branches, timings, fees…" autocomplete="off" maxlength="200">
+    <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+  </form>
+</section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -740,13 +929,30 @@ html:not(.js) .loader{display:none}
     v.addEventListener('playing', () => reveal(v), { once: true });
     if (RM) { v.removeAttribute('autoplay'); v.pause(); } else v.play().catch(() => {});
   });
+  // hero playlist: Vol 3.0 reel, then Vol 2.0 reel, looping
+  const reels = [
+    { k: 'hero', src: ['hero.mp4'], coin: 'logo-v3.webp', lbl: 'Now: Vol 3.0' },
+    { k: 'johar', src: ['johar.mp4'], coin: 'logo-v2.webp', lbl: 'Now: Vol 2.0' }
+  ];
+  const blobs = {}; let ri = 0;
+  function playReel(i) {
+    ri = i; const v = vids.hero, r = reels[i], m = v.muted;
+    if (blobs[r.k]) { v.src = blobs[r.k]; }
+    else { v.removeAttribute('src'); v.innerHTML = r.src.map(u => '<source src="' + u + '" type="video/' + u.split('.').pop() + '">').join(''); v.load(); }
+    v.muted = m; if (!RM) v.play().catch(() => {});
+    $('#reelLbl').textContent = r.lbl; $('#reelCoin').src = r.coin;
+  }
+  let switching = false;
+  const nextReel = () => { if (switching) return; switching = true; playReel((ri + 1) % reels.length); setTimeout(() => switching = false, 1200); };
+  vids.hero.addEventListener('ended', nextReel);
+  vids.hero.addEventListener('timeupdate', () => { const v = vids.hero; if (v.duration && v.currentTime > v.duration - 0.3) nextReel(); });
+  $('#reelBtn').addEventListener('click', nextReel);
   // single-file preview only: videos arrive as base64
   window.__setVideos = map => Object.entries(map).forEach(([k, b64]) => {
-    const v = vids[k]; if (!v) return;
     let url = 'data:video/mp4;base64,' + b64;
     try { const bin = atob(b64), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); url = URL.createObjectURL(new Blob([u], { type: 'video/mp4' })); } catch (e) {}
-    v.addEventListener('error', () => { if (v.src.startsWith('blob:')) { v.src = 'data:video/mp4;base64,' + b64; v.play().catch(() => {}); } }, { once: true });
-    v.src = url; v.load(); if (!RM) v.play().catch(() => {});
+    if (reels.some(r => r.k === k)) { blobs[k] = url; if (reels[ri].k === k) { vids.hero.src = url; vids.hero.load(); if (!RM) vids.hero.play().catch(() => {}); } return; }
+    const v = vids[k]; if (!v) return; v.src = url; v.load(); if (!RM) v.play().catch(() => {});
   });
   // sound toggle for the 48s reel
   const sb = $('#soundBtn');
@@ -791,8 +997,7 @@ html:not(.js) .loader{display:none}
     return { g, all, ...paths };
   }
   const webs = $$('.web-svg').map(s => ({ el: s, w: buildWeb(s) }));
-  const heroWeb = webs[0].w, bigWeb = webs[1].w, footWeb = webs[2].w;
-  footWeb.all.forEach(p => p.style.strokeDashoffset = 0);
+  const heroWeb = webs[0].w, bigWeb = webs[1].w;
 
   // split hero words into chars
   $$('.split').forEach(el => {
@@ -822,23 +1027,78 @@ html:not(.js) .loader{display:none}
 
   /* ---------- menu ---------- */
   const burger = $('.nav__burger');
-  const setMenu = open => { root.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
+  const setMenu = open => { if (open) setBot(false); root.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
   burger.addEventListener('click', () => setMenu(!root.classList.contains('menu-open')));
   $$('.menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-  d.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  d.addEventListener('keydown', e => { if (e.key === 'Escape') { setMenu(false); setBot(false); } });
+  d.addEventListener('pointerdown', e => { if (root.classList.contains('menu-open') && !e.target.closest('#menu,.nav__burger')) setMenu(false); });
 
-  /* ---------- WhatsApp builder ---------- */
-  const picks = $$('.pick'), nm = $('#nm'), bubble = $('#bubble'), wa = $('#waBtn'), nmErr = $('#nmErr');
+  /* ---------- chatbot (rule-based, only the gym's real info) ---------- */
+  const WA = 'https://wa.me/923333138451?text=';
+  const MAPS = 'https://www.google.com/maps/search/?api=1&query=The%20Verzish.com%203.0%20B-122%20Block%20H%20North%20Nazimabad%20Karachi';
+  const waLink = t => WA + encodeURIComponent('Assalam o Alaikum, ' + t);
+  const MAP3 = 'https://www.google.com/maps/search/?api=1&query=The%20Verzish.com%203.0%20B-122%20Block%20H%20North%20Nazimabad%20Karachi';
+  const MAP2 = 'https://www.google.com/maps/search/?api=1&query=The%20Verzish.com%202.0%20B-191%20Block%2011%20Gulistan-e-Johar%20Karachi';
+  const MAP1 = 'https://www.google.com/maps/search/?api=1&query=TheVerzish.com%20B-69%20Block%2017%20FB%20Area%20Karachi';
+  const KB = [
+    { k: /(salam|salaam|assalam|aoa|hello|hi\b|hey|helo)/, a: 'Wa Alaikum Assalam! I can help with our three branches, timings, fees and directions. What would you like to know?' },
+    { k: /(johar|gulistan|2\.0|vol 2|volume 2|b-?191)/, a: 'Verzish 2.0 · Gulistan-e-Johar\nPlot # B-191, Block 11, Gulistan-e-Johar, Karachi.\nCall 0333-3138451 or 0315-2078581. Opens 6 AM; the desk will confirm ladies\' and gents\' timings.', btn: ['Directions to 2.0', MAP2] },
+    { k: /(fb area|federal|block 17|1\.0|vol 1|volume 1|b-?69|gulberg)/, a: 'Verzish 1.0 · FB Area — where it started.\nPlot No. B-69, Block 17, Federal B Area, Karachi.\nCall 0333-3138451 or email theverzish@gmail.com. Rated 4.3★ on Google.', btn: ['Directions to 1.0', MAP1] },
+    { k: /(nazimabad|block h|3\.0|vol 3|volume 3|b-?122|ahbab)/, a: 'Verzish 3.0 · North Nazimabad — our newest.\nPlot # B-122, Block H · 2nd floor, Street 5, near Ahbab Sweets.\nOpen 24 hours. Call 0333-3138451 or 0333-2832841.', btn: ['Directions to 3.0', MAP3] },
+    { k: /(fee|fees|price|pric|charge|cost|membership|package|kitni|kitne|paise|rupees|rs\b|monthly)/, a: "Fees and packages come straight from each branch's front desk, so you always get the current price. Tell them which branch you want.", btn: ['Ask fees on WhatsApp', waLink("I'd like to know the monthly fee and packages at The Verzish.com. Branch: ")] },
+    { k: /(ladies|lady|female|women|woman|girl|larki|larkiyan|khawateen|sister)/, a: "All three branches are unisex. 2.0's members mention proper separate timings for men and women, and 1.0 has run free demo classes for ladies. Ask the desk for the current ladies' schedule.", btn: ["Ask ladies' timings", waLink("what are the ladies' timings? Branch: ")] },
+    { k: /(time|timing|hour|open|close|kab|kitne baje|24|night|raat|morning|subah)/, a: 'Vol 3.0 (North Nazimabad) is open 24 hours.\nVol 2.0 (Johar) opens 6 AM.\nVol 1.0 (FB Area): call or WhatsApp for current timings.' },
+    { k: /(branch|branches|where|location|address|kahan|kidhar|map|direction|reach|near|nearest|qareeb)/, a: 'We have three branches in Karachi:\n1.0 · B-69, Block 17, FB Area\n2.0 · B-191, Block 11, Gulistan-e-Johar\n3.0 · B-122, Block H, North Nazimabad (open 24 hours)\nWhich one is closest to you?' },
+    { k: /(studio|yoga|mat|class|functional|core|mobility|kettle|turf)/, a: 'Vol 3.0 has a separate studio with turf flooring, mats and backlit mirrors. Vol 2.0 has a turf lane with battle ropes. Vol 1.0 runs weekly classes.' },
+    { k: /(machine|equipment|weight|dumbbell|plate|cardio|treadmill|bike|cable|bench|squat|rack)/, a: 'Every branch has free weights, machines and cardio. 3.0 adds Hammer Strength bumper plates and a turf studio under an LED web ceiling; 2.0 has plate-loaded machines, a full dumbbell rack and a cardio zone.' },
+    { k: /(trainer|coach|personal|pt\b|diet|nutrition)/, a: 'Personal training is offered at Vol 1.0. For the other branches, ask the front desk what is available.', btn: ['Ask on WhatsApp', waLink('do you offer personal training? Branch: ')] },
+    { k: /(phone|number|contact|call|whatsapp|mobile|email)/, a: 'Main line for all branches: 0333-3138451.\n2.0 also: 0315-2078581 · 3.0 also: 0333-2832841\nEmail: theverzish@gmail.com', btn: ['WhatsApp us', waLink('I have a question about The Verzish.com.')] },
+    { k: /(locker|changing|shower|wash)/, a: 'Vol 3.0 has numbered lockers outside the changing room. For other facilities, the desk at each branch can confirm.' },
+    { k: /(unisex|join|register|admission|start|visit|trial|tour|demo)/, a: 'Come by any branch. 3.0 is open 24 hours. Or message the desk first and they will guide you.', btn: ['Plan a visit', waLink("I'd like to visit. Branch: ")] },
+  ];
+  const chips = ['Nearest branch', 'Timings', 'Fees', 'Vol 3.0', 'Vol 2.0', 'Vol 1.0', "Ladies' timings", 'Studio'];
+  const bot = $('#bot'), fab = $('#botFab'), log = $('#botLog'), chipBox = $('#botChips'), form = $('#botForm'), inp = $('#botIn'), err = $('#botErr');
+  let greeted = false;
+  function say(text, who = 'bot', btn) {
+    const m = d.createElement('div'); m.className = 'msg msg--' + who; m.textContent = text;
+    if (btn) { const a = d.createElement('a'); a.className = 'msg__btn'; a.href = btn[1]; a.target = '_blank'; a.rel = 'noopener'; a.textContent = btn[0]; m.appendChild(d.createElement('br')); m.appendChild(a); }
+    log.appendChild(m); log.scrollTop = log.scrollHeight;
+  }
+  function answer(q) {
+    const t = q.toLowerCase(), hit = KB.find(e => e.k.test(t));
+    const typing = d.createElement('div'); typing.className = 'msg msg--bot msg--typing'; typing.innerHTML = '<i></i><i></i><i></i>'; log.appendChild(typing); log.scrollTop = log.scrollHeight;
+    setTimeout(() => { typing.remove(); hit ? say(hit.a, 'bot', hit.btn) : say("I don't have that one yet. The front desk can answer it on WhatsApp.", 'bot', ['Ask the front desk', waLink(q)]); }, RM ? 0 : 650);
+  }
+  function ask(q) { say(q, 'me'); answer(q); }
+  chips.forEach(c => { const b = d.createElement('button'); b.type = 'button'; b.textContent = c; b.addEventListener('click', () => ask(c)); chipBox.appendChild(b); });
+  function setBot(open) {
+    if (open) setMenu(false);
+    root.classList.toggle('bot-open', open); fab.setAttribute('aria-expanded', open);
+    if (open) { if (!greeted) { greeted = true; say('Assalam o Alaikum! Welcome to The Verzish.com. Ask me about our three branches, timings, fees or directions.'); } setTimeout(() => inp.focus({ preventScroll: true }), 250); }
+  }
+  fab.addEventListener('click', () => setBot(!root.classList.contains('bot-open')));
+  $('#botClose').addEventListener('click', () => { setBot(false); fab.focus(); });
+  inp.addEventListener('input', () => { err.textContent = ''; });
+  form.addEventListener('submit', e => { e.preventDefault(); const q = inp.value.trim(); if (!q) { err.textContent = 'Type a question first, like "What are your timings?"'; inp.focus(); return; } inp.value = ''; ask(q); });
+  
+
+  /* ---------- WhatsApp builder (branch-aware) ---------- */
+  const picks = $$('.picks--q .pick'), branches = $$('.picks--branch .pick'), nm = $('#nm'), bubble = $('#bubble'), wa = $('#waBtn'), nmErr = $('#nmErr'), callAlt = $('#callAlt');
+  const ALT = { '3': ['tel:+923332832841', 'Call 0333-2832841'], '2': ['tel:+923152078581', 'Call 0315-2078581'], '1': ['mailto:theverzish@gmail.com', 'Email the gym'] };
   const time = () => new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', hour: '2-digit', minute: '2-digit' }).format(new Date());
   function msg() {
+    const br = branches.find(p => p.getAttribute('aria-checked') === 'true');
+    const where = br ? br.dataset.b : 'The Verzish.com';
     const qs = picks.filter(p => p.getAttribute('aria-pressed') === 'true').map(p => p.dataset.q);
     const name = nm.value.trim();
     const list = qs.length > 1 ? qs.slice(0, -1).join(', ') + ' and ' + qs.at(-1) : (qs[0] || '');
-    const t = `Assalam o Alaikum${name ? ', this is ' + name : ''}.\n${qs.length ? `I'd like to know about the ${list} at Verzish 3.0 (Block H, North Nazimabad).` : 'I have a question about Verzish 3.0 (Block H, North Nazimabad).'}\nJazakAllah!`;
+    const t = `Assalam o Alaikum${name ? ', this is ' + name : ''}.\n${qs.length ? `I'd like to know about the ${list} at ${where}.` : `I have a question about ${where}.`}\nJazakAllah!`;
     bubble.innerHTML = ''; bubble.append(t); const s = d.createElement('small'); s.textContent = time() + ' ✓✓'; bubble.append(s);
     wa.href = 'https://wa.me/923333138451?text=' + encodeURIComponent(t);
+    const key = br ? br.dataset.b.match(/(\d)\.0/)[1] : '3'; callAlt.href = ALT[key][0]; callAlt.textContent = ALT[key][1];
   }
   picks.forEach(p => p.addEventListener('click', () => { p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); msg(); }));
+  branches.forEach(p => p.addEventListener('click', () => { branches.forEach(x => { const on = x === p; x.setAttribute('aria-checked', on); x.setAttribute('aria-pressed', on); }); msg(); }));
   nm.addEventListener('input', () => {
     const ok = /^[\p{L} .'-]*$/u.test(nm.value);
     nm.setAttribute('aria-invalid', !ok); nmErr.textContent = ok ? '' : 'Use letters only, like "Ayesha".';
@@ -847,15 +1107,23 @@ html:not(.js) .loader{display:none}
   wa.addEventListener('click', e => { if (nm.getAttribute('aria-invalid') === 'true') { e.preventDefault(); nm.focus(); } });
   msg();
 
+  /* ---------- branch tabs ---------- */
+  const tabs = $$('.tab');
+  function selectTab(t, focus) {
+    tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; $('#' + x.getAttribute('aria-controls')).hidden = !on; });
+    if (focus) t.focus();
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(t));
+    t.addEventListener('keydown', e => { const n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (n) { e.preventDefault(); selectTab(tabs[(i + n + tabs.length) % tabs.length], true); } });
+  });
+
   /* ---------- Karachi clock ---------- */
-  const clock = $('#clock'), bar = $('.clock__bar');
-  const knob = d.createElement('i'); Object.assign(knob.style, { display: 'block', width: '14px', height: '14px', borderRadius: '50%', background: 'var(--color-ink)', border: '2px solid var(--color-glow)', position: 'relative', top: '-4px', boxShadow: 'var(--glow-sm)' });
-  bar.appendChild(knob);
+  const clock = $('#clock');
   function tick() {
     const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
-    const h = +parts.find(p => p.type === 'hour').value, m = +parts.find(p => p.type === 'minute').value;
-    clock.textContent = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
-    knob.style.left = `calc(${((h * 60 + m) / 1440 * 100).toFixed(2)}% - 7px)`;
+    clock.textContent = parts.find(p => p.type === 'hour').value + ':' + parts.find(p => p.type === 'minute').value;
   }
   tick(); setInterval(tick, 15000);
 
@@ -917,7 +1185,6 @@ html:not(.js) .loader{display:none}
   const speed = { v: 1 };
   ScrollTrigger.create({ start: 0, end: 'max', onUpdate: s => { const v = Math.min(Math.abs(s.getVelocity()) / 220, 7); if (1 + v > speed.v) speed.v = 1 + v; } });
   gsap.ticker.add(() => { speed.v += (1 - speed.v) * .06; mqs.forEach(t => t.timeScale(speed.v)); });
-  gsap.to('.marquee__row', { skewX: -6, scrollTrigger: { trigger: '.marquee', start: 'top bottom', end: 'bottom top', scrub: true } });
 
   /* reveals */
   ScrollTrigger.batch('.rv', { start: 'top 90%', onEnter: b => gsap.to(b, { opacity: 1, y: 0, duration: 1.1, ease: E, stagger: .08, onComplete() { b.forEach(x => x.classList.add('is-in')); } }) });
@@ -962,8 +1229,6 @@ html:not(.js) .loader{display:none}
 
   /* parallax */
   gsap.to('.story__bg img', { yPercent: -15, ease: 'none', scrollTrigger: { trigger: '.story', start: 'top bottom', end: 'bottom top', scrub: true } });
-  gsap.from('.foot__big', { yPercent: 30, opacity: 0, duration: 1.4, ease: E, scrollTrigger: { trigger: '.foot', start: 'top 80%' } });
-  gsap.to('.foot__web', { rotation: 90, ease: 'none', scrollTrigger: { trigger: '.foot', start: 'top bottom', end: 'bottom bottom', scrub: true } });
   gsap.from('.studio__reel', { rotate: -4, scale: .9, ease: 'none', scrollTrigger: { trigger: '.studio', start: 'top bottom', end: 'center center', scrub: true } });
 
   /* touch: switch photos to colour when they reach the middle of the screen */
