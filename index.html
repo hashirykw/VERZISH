@@ -8,9 +8,9 @@
 <meta name="theme-color" content="#181b20">
 <meta property="og:title" content="The Verzish.com 3.0 — Always On Top">
 <meta property="og:description" content="Unisex gym · Block H, North Nazimabad, Karachi · Open 24 hours">
-<meta property="og:image" content="assets/logo.png">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:image" content="logo.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Archivo:wdth,wght@62..125,300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -158,7 +158,7 @@ html:not(.js) .loader{display:none}
 .hero:hover .hero__spot{opacity:1}
 .hero__shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgb(8 9 11 / .5) 0%,transparent 22%,transparent 50%,rgb(8 9 11 / .55) 76%,var(--color-ink) 100%),radial-gradient(120% 90% at 50% 45%,transparent 60%,rgb(8 9 11 / .5) 100%)}
 .hero__scan{position:absolute;inset:0;pointer-events:none;opacity:.12;background:repeating-linear-gradient(0deg,rgb(8 9 11 / .5) 0 1px,transparent 1px 3px)}
-.hero__mark{position:absolute;z-index:2;right:-4vw;top:50%;width:min(58vw,760px);aspect-ratio:1;transform:translateY(-52%);pointer-events:none;perspective:900px}
+.hero__mark{position:absolute;z-index:2;right:-4vw;top:calc(50% - min(30vw,395px));width:min(58vw,760px);aspect-ratio:1;pointer-events:none;perspective:900px}
 .hero__coin{position:absolute;left:29%;top:29%;width:42%;aspect-ratio:1;border-radius:50%;animation:coin 9s var(--ease-in-out) infinite;filter:drop-shadow(0 24px 40px rgb(8 9 11 / .75)) drop-shadow(0 0 22px rgb(242 243 245 / .18))}
 .hero__coin img{width:100%;height:100%;border-radius:50%}
 .hero__coin::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,transparent 38%,rgb(255 255 255 / .45) 50%,transparent 62%);background-size:300% 100%;mix-blend-mode:overlay;animation:sweep 5s var(--ease-in-out) infinite}
@@ -181,7 +181,7 @@ html:not(.js) .loader{display:none}
 .scroll-cue{position:absolute;z-index:3;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
 .scroll-cue span{width:1px;height:46px;background:linear-gradient(var(--color-glow),transparent);animation:cue 2s var(--ease-in-out) infinite;transform-origin:top}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
-@media (max-width:980px){.scroll-cue{display:none}.hero__mark{right:-12vw;top:calc(66px + env(safe-area-inset-top,0px));width:min(72vw,420px);transform:none}.hero__tools{top:calc(84px + env(safe-area-inset-top,0px));bottom:auto;left:var(--gutter);right:auto}}
+@media (max-width:980px){.scroll-cue{display:none}.hero__mark{right:-12vw;top:calc(66px + env(safe-area-inset-top,0px));width:min(72vw,420px)}.hero__tools{top:calc(84px + env(safe-area-inset-top,0px));bottom:auto;left:var(--gutter);right:auto}}
 @media (max-width:600px){.hero__title{font-size:min(31vw,20svh)}.hero__ctas{width:100%}.hero__ctas .btn{flex:1 1 0;min-width:0;padding:0 14px}.hero__inner{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}}
 
 /* ───────── MARQUEE ───────── */
@@ -414,14 +414,14 @@ html:not(.js) .loader{display:none}
 <div class="loader" aria-hidden="true">
   <div class="loader__coin">
     <svg viewBox="0 0 200 200"><path id="lp" d="M100 100 m-92 0 a92 92 0 1 1 184 0 a92 92 0 1 1 -184 0" fill="none"/><text font-family="Geist Mono, monospace" font-size="9" letter-spacing="3.2" fill="#afafaf"><textPath href="#lp">THE VERZISH.COM · VOLUME 3.0 · ALWAYS ON TOP · NORTH NAZIMABAD ·</textPath></text></svg>
-    <img src="assets/logo.webp" alt="">
+    <img src="logo.webp" alt="">
   </div>
   <div class="loader__count"><span id="lc">0</span></div>
   <div class="loader__cap mono">North Nazimabad<br>Block H · 2nd floor</div>
 </div>
 
 <header class="nav" id="nav">
-  <a href="#top" class="brand" aria-label="The Verzish.com 3.0 home"><img src="assets/logo.webp" alt="" width="40" height="40">Verzish <b>3.0</b></a>
+  <a href="#top" class="brand" aria-label="The Verzish.com 3.0 home"><img src="logo.webp" alt="" width="40" height="40">Verzish <b>3.0</b></a>
   <ul class="nav__links">
     <li><a href="#floor">The floor</a></li>
     <li><a href="#studio">Studio</a></li>
@@ -445,8 +445,11 @@ html:not(.js) .loader{display:none}
 <!-- HERO -->
 <section class="hero" id="top" aria-label="Welcome to The Verzish.com 3.0">
   <div class="hero__media">
-    <img class="hero__poster" src="assets/web.webp" alt="">
-    <video class="hero__video" data-src="hero" muted loop playsinline autoplay preload="auto" aria-label="Walkthrough of the Verzish 3.0 gym floor"></video>
+    <img class="hero__poster" src="hero-poster.webp" alt="">
+    <video class="hero__video" muted loop playsinline autoplay preload="auto" poster="hero-poster.webp" aria-label="48-second walkthrough of the Verzish 3.0 gym floor">
+      <source src="hero.mp4" type="video/mp4">
+      <source src="hero.webm" type="video/webm">
+    </video>
     <div class="hero__tone"></div>
     <div class="hero__wash"></div>
     <div class="hero__sweep"></div>
@@ -456,9 +459,10 @@ html:not(.js) .loader{display:none}
   </div>
   <div class="hero__mark" aria-hidden="true">
     <svg class="hero__web web-svg" data-rings="5" data-spokes="10" viewBox="-110 -110 220 220"></svg>
-    <div class="hero__coin"><img src="assets/logo.webp" alt=""></div>
+    <div class="hero__coin"><img src="logo.webp" alt=""></div>
   </div>
   <div class="hero__tools">
+    <button class="chip" id="soundBtn" aria-pressed="false" aria-label="Turn reel sound on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path id="sndIco" d="M17 9l5 6M22 9l-5 6"/></svg><span id="sndLbl">Sound off</span></button>
     <button class="chip" id="playBtn" aria-label="Pause video"><svg viewBox="0 0 24 24" fill="currentColor"><path id="playIco" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span>Reel</span></button>
   </div>
   <div class="hero__inner wrap">
@@ -511,9 +515,9 @@ html:not(.js) .loader{display:none}
   <div class="web__pin wrap">
     <div class="web__art">
       <div class="web__photos">
-        <img src="assets/web.webp" alt="LED spiderweb light over the Verzish 3.0 floor" loading="lazy">
-        <img src="assets/web2.webp" alt="" loading="lazy">
-        <img src="assets/web3.webp" alt="" loading="lazy">
+        <img src="web.webp" alt="LED spiderweb light over the Verzish 3.0 floor" loading="lazy">
+        <img src="web2.webp" alt="" loading="lazy">
+        <img src="web3.webp" alt="" loading="lazy">
       </div>
       <svg class="web-svg web-big" data-rings="6" data-spokes="12" viewBox="-110 -110 220 220" aria-hidden="true"></svg>
     </div>
@@ -538,14 +542,14 @@ html:not(.js) .loader{display:none}
     <p class="rv">Every photo here is from Verzish 3.0 itself — no stock. Hover (or scroll on your phone) to switch the lights on.</p>
   </div>
   <div class="bento">
-    <figure class="tile t1 rv" data-cursor="view"><img src="assets/rack.webp" alt="Dumbbell rack under the red Verzish sign" loading="lazy"><figcaption><h3>Free<br>weights</h3><span class="mono">Full rack</span></figcaption></figure>
-    <figure class="tile t2 rv" data-cursor="view"><img src="assets/machine.webp" alt="Plate-loaded machines on white marble" loading="lazy"><figcaption><h3>Plate-loaded</h3><span class="mono">Machines</span></figcaption></figure>
+    <figure class="tile t1 rv" data-cursor="view"><img src="rack.webp" alt="Dumbbell rack under the red Verzish sign" loading="lazy"><figcaption><h3>Free<br>weights</h3><span class="mono">Full rack</span></figcaption></figure>
+    <figure class="tile t2 rv" data-cursor="view"><img src="machine.webp" alt="Plate-loaded machines on white marble" loading="lazy"><figcaption><h3>Plate-loaded</h3><span class="mono">Machines</span></figcaption></figure>
     <div class="tile tile--word t3 rv"><span class="mono">On the wall</span><h3>One<br>more<br>rep.</h3></div>
-    <figure class="tile t4 rv" data-cursor="view"><img src="assets/plates.webp" alt="Coloured Hammer Strength bumper plates" loading="lazy"><figcaption><h3>Bumpers</h3><span class="mono">Hammer</span></figcaption></figure>
-    <figure class="tile t5 rv" data-cursor="view"><img src="assets/transform.webp" alt="Cable station under the Transform wall" loading="lazy"><figcaption><h3>Cables</h3><span class="mono">Transform wall</span></figcaption></figure>
-    <figure class="tile t6 rv" data-cursor="view"><img src="assets/discipline.webp" alt="Cardio and stair climber under the Discipline wall" loading="lazy"><figcaption><h3>Cardio deck</h3><span class="mono">Discipline wall</span></figcaption></figure>
-    <figure class="tile t7 rv" data-cursor="view"><img src="assets/bikes.webp" alt="Spin bikes" loading="lazy"><figcaption><h3>Bikes</h3><span class="mono">Spin row</span></figcaption></figure>
-    <figure class="tile t8 rv" data-cursor="view"><img src="assets/lockers.webp" alt="Numbered lockers outside the changing room" loading="lazy"><figcaption><h3>Lockers</h3><span class="mono">Changing room</span></figcaption></figure>
+    <figure class="tile t4 rv" data-cursor="view"><img src="plates.webp" alt="Coloured Hammer Strength bumper plates" loading="lazy"><figcaption><h3>Bumpers</h3><span class="mono">Hammer</span></figcaption></figure>
+    <figure class="tile t5 rv" data-cursor="view"><img src="transform.webp" alt="Cable station under the Transform wall" loading="lazy"><figcaption><h3>Cables</h3><span class="mono">Transform wall</span></figcaption></figure>
+    <figure class="tile t6 rv" data-cursor="view"><img src="discipline.webp" alt="Cardio and stair climber under the Discipline wall" loading="lazy"><figcaption><h3>Cardio deck</h3><span class="mono">Discipline wall</span></figcaption></figure>
+    <figure class="tile t7 rv" data-cursor="view"><img src="bikes.webp" alt="Spin bikes" loading="lazy"><figcaption><h3>Bikes</h3><span class="mono">Spin row</span></figcaption></figure>
+    <figure class="tile t8 rv" data-cursor="view"><img src="lockers.webp" alt="Numbered lockers outside the changing room" loading="lazy"><figcaption><h3>Lockers</h3><span class="mono">Changing room</span></figcaption></figure>
   </div>
 </section>
 
@@ -553,14 +557,14 @@ html:not(.js) .loader{display:none}
 <section class="tour" aria-labelledby="tour-h">
   <div class="wrap sec-head"><h2 id="tour-h" class="rv">Walk the floor.</h2><p class="rv mono">Scroll → station by station</p></div>
   <div class="tour__track">
-    <article class="card" data-cursor="view"><img src="assets/welcome.webp" alt="Welcome wall at the entrance" loading="lazy"><span class="card__n">01</span><div class="card__cap"><h3>The welcome</h3><p>Up the stairs, second floor. Front desk straight ahead.</p></div></article>
-    <article class="card" data-cursor="view"><img src="assets/painzone.webp" alt="The Pain Zone sign" loading="lazy"><span class="card__n">02</span><div class="card__cap"><h3>The pain zone</h3><p>Where the big lifts happen.</p></div></article>
-    <article class="card" data-cursor="view"><img src="assets/dumbbells.webp" alt="Dumbbell rack against ribbed wall panels" loading="lazy"><span class="card__n">03</span><div class="card__cap"><h3>Dumbbells</h3><p>Rows of them. Grab and go.</p></div></article>
-    <article class="card" data-cursor="view"><img src="assets/platetree.webp" alt="Plate tree with Verzish logo plates" loading="lazy"><span class="card__n">04</span><div class="card__cap"><h3>Branded iron</h3><p>Verzish-logo plates on every tree.</p></div></article>
-    <article class="card" data-cursor="view"><img src="assets/bench.webp" alt="Benches under the LED web" loading="lazy"><span class="card__n">05</span><div class="card__cap"><h3>Bench zone</h3><p>Flat, incline, decline — under the web.</p></div></article>
-    <article class="card" data-cursor="view"><img src="assets/machine2.webp" alt="Plate-loaded row machine" loading="lazy"><span class="card__n">06</span><div class="card__cap"><h3>Back day</h3><p>Plate-loaded rows and pulldowns.</p></div></article>
-    <article class="card" data-cursor="view"><img src="assets/treadmill.webp" alt="Treadmill lit in red" loading="lazy"><span class="card__n">07</span><div class="card__cap"><h3>Cardio</h3><p>Treadmills, stair climber, bikes.</p></div></article>
-    <article class="card" data-cursor="view"><img src="assets/cable.webp" alt="Cable attachment close-up" loading="lazy"><span class="card__n">08</span><div class="card__cap"><h3>Details</h3><p>Attachments for every cable move.</p></div></article>
+    <article class="card" data-cursor="view"><img src="welcome.webp" alt="Welcome wall at the entrance" loading="lazy"><span class="card__n">01</span><div class="card__cap"><h3>The welcome</h3><p>Up the stairs, second floor. Front desk straight ahead.</p></div></article>
+    <article class="card" data-cursor="view"><img src="painzone.webp" alt="The Pain Zone sign" loading="lazy"><span class="card__n">02</span><div class="card__cap"><h3>The pain zone</h3><p>Where the big lifts happen.</p></div></article>
+    <article class="card" data-cursor="view"><img src="dumbbells.webp" alt="Dumbbell rack against ribbed wall panels" loading="lazy"><span class="card__n">03</span><div class="card__cap"><h3>Dumbbells</h3><p>Rows of them. Grab and go.</p></div></article>
+    <article class="card" data-cursor="view"><img src="platetree.webp" alt="Plate tree with Verzish logo plates" loading="lazy"><span class="card__n">04</span><div class="card__cap"><h3>Branded iron</h3><p>Verzish-logo plates on every tree.</p></div></article>
+    <article class="card" data-cursor="view"><img src="bench.webp" alt="Benches under the LED web" loading="lazy"><span class="card__n">05</span><div class="card__cap"><h3>Bench zone</h3><p>Flat, incline, decline — under the web.</p></div></article>
+    <article class="card" data-cursor="view"><img src="machine2.webp" alt="Plate-loaded row machine" loading="lazy"><span class="card__n">06</span><div class="card__cap"><h3>Back day</h3><p>Plate-loaded rows and pulldowns.</p></div></article>
+    <article class="card" data-cursor="view"><img src="treadmill.webp" alt="Treadmill lit in red" loading="lazy"><span class="card__n">07</span><div class="card__cap"><h3>Cardio</h3><p>Treadmills, stair climber, bikes.</p></div></article>
+    <article class="card" data-cursor="view"><img src="cable.webp" alt="Cable attachment close-up" loading="lazy"><span class="card__n">08</span><div class="card__cap"><h3>Details</h3><p>Attachments for every cable move.</p></div></article>
     <article class="card card--end"><span class="mono" style="color:var(--color-steel)">End of tour</span><h3>See it<br>in person.</h3><a class="btn mag" href="#visit">Get directions</a></article>
   </div>
 </section>
@@ -571,7 +575,7 @@ html:not(.js) .loader{display:none}
     <div class="studio__reel rv">
       <div class="studio__glow hex"></div>
       <div class="studio__frame hex"></div>
-      <div class="studio__video hex"><img src="assets/studio_wide.webp" alt=""><video data-src="studio" muted loop playsinline autoplay preload="none" aria-label="Walkthrough of the Verzish studio"></video></div>
+      <div class="studio__video hex"><img src="studio_wide.webp" alt=""><video muted loop playsinline autoplay preload="metadata" aria-label="Walkthrough of the Verzish studio"><source src="studio.mp4" type="video/mp4"></video></div>
     </div>
     <div class="studio__copy">
       <span class="tag rv"><span class="dot"></span>Zone two</span>
@@ -579,10 +583,10 @@ html:not(.js) .loader{display:none}
       <p class="rv">A separate room with turf flooring, mats laid out and backlit mirrors on every wall. Built for functional work, core, mobility and conditioning.</p>
       <div class="kit rv"><span>Turf floor</span><span>Mats</span><span>Kettlebells</span><span>Medicine balls</span><span>Dumbbells</span><span>Squat racks</span><span>Hammer plates</span><span>Swiss balls</span><span>Hack squat</span></div>
       <div class="hexrow">
-        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="assets/studio_balls.webp" alt="Kettlebells and medicine balls" loading="lazy"></div></figure>
-        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="assets/studio_plates.webp" alt="Rack with plates and swiss balls" loading="lazy"></div></figure>
-        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="assets/studio_pink.webp" alt="10 kg Hammer plate" loading="lazy"></div></figure>
-        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="assets/studio_mats.webp" alt="Mats in front of backlit mirrors" loading="lazy"></div></figure>
+        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="studio_balls.webp" alt="Kettlebells and medicine balls" loading="lazy"></div></figure>
+        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="studio_plates.webp" alt="Rack with plates and swiss balls" loading="lazy"></div></figure>
+        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="studio_pink.webp" alt="10 kg Hammer plate" loading="lazy"></div></figure>
+        <figure class="hex rv" data-cursor="view"><div class="hex"><img src="studio_mats.webp" alt="Mats in front of backlit mirrors" loading="lazy"></div></figure>
       </div>
     </div>
   </div>
@@ -592,16 +596,16 @@ html:not(.js) .loader{display:none}
 <section class="walls wrap" id="walls" aria-labelledby="walls-h">
   <div class="sec-head"><h2 id="walls-h" class="rv">Walls that talk.</h2><p class="rv">The words painted inside Verzish 3.0. Read them between sets.</p></div>
   <div class="stack">
-    <article class="slide"><img src="assets/transform.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 01 · Cable station</span><h3>Trans<span class="o">form.</span></h3><div class="slide__foot"><p>Painted above the cable column — the whole point of showing up.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
-    <article class="slide"><img src="assets/discipline.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 02 · Cardio deck</span><h3>Disci<span class="o">pline.</span></h3><div class="slide__foot"><p>Runs the length of the cardio row. Motivation fades. This doesn't.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
+    <article class="slide"><img src="transform.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 01 · Cable station</span><h3>Trans<span class="o">form.</span></h3><div class="slide__foot"><p>Painted above the cable column — the whole point of showing up.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
+    <article class="slide"><img src="discipline.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 02 · Cardio deck</span><h3>Disci<span class="o">pline.</span></h3><div class="slide__foot"><p>Runs the length of the cardio row. Motivation fades. This doesn't.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
     <article class="slide slide--white"><div class="slide__in"><span class="mono">Wall 03 · Mural</span><h3>Pain is fuel.<br><span class="o">Results are forever.</span></h3><div class="slide__foot"><p>The mural everyone takes a photo with.</p><span class="mono">Main floor</span></div></div></article>
-    <article class="slide"><img src="assets/corridor.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 04 · The zone</span><h3>One more <span class="o">rep.</span></h3><div class="slide__foot"><p>Then another one.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
+    <article class="slide"><img src="corridor.webp" alt="" loading="lazy"><div class="slide__in"><span class="mono">Wall 04 · The zone</span><h3>One more <span class="o">rep.</span></h3><div class="slide__foot"><p>Then another one.</p><span class="tag"><span class="dot"></span>Main floor</span></div></div></article>
   </div>
 </section>
 
 <!-- STORY -->
 <section class="story" id="story" aria-labelledby="story-h">
-  <div class="story__bg" aria-hidden="true"><img src="assets/platetree.webp" alt="" loading="lazy"></div>
+  <div class="story__bg" aria-hidden="true"><img src="platetree.webp" alt="" loading="lazy"></div>
   <div class="wrap">
     <span class="tag rv">The Verzish.com · Karachi</span>
     <h2 id="story-h" class="sr-only">Our story</h2>
@@ -657,7 +661,7 @@ html:not(.js) .loader{display:none}
 <section class="visit wrap" id="visit" aria-labelledby="visit-h">
   <div class="visit__grid">
     <div class="visit__addr rv">
-      <img src="assets/sign.webp" alt="" loading="lazy">
+      <img src="sign.webp" alt="" loading="lazy">
       <span class="tag"><span class="dot"></span>Find us</span>
       <h2 id="visit-h">Block H,<br>North Nazimabad.</h2>
       <address><b>Plot # B-122, Block H, North Nazimabad, Karachi.</b><br>2nd floor · Street 5 · near Ahbab Sweets.</address>
@@ -686,12 +690,12 @@ html:not(.js) .loader{display:none}
 <section class="ig wrap" aria-labelledby="ig-h">
   <div class="sec-head"><h2 id="ig-h" class="rv">@theverzishdotcom3.0</h2><a class="btn btn--ghost mag" href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener">Follow on Instagram</a></div>
   <div class="ig__grid">
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="assets/web2.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="assets/studio_hex.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="assets/studio_rack.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="assets/studio_hack.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="assets/studio_shelf.webp" alt="" loading="lazy"></a>
-    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="assets/studio_rack2.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="web2.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_hex.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_rack.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_hack.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_shelf.webp" alt="" loading="lazy"></a>
+    <a href="https://www.instagram.com/theverzishdotcom3.0/" target="_blank" rel="noopener" aria-label="Instagram post"><img src="studio_rack2.webp" alt="" loading="lazy"></a>
   </div>
 </section>
 </main>
@@ -699,7 +703,7 @@ html:not(.js) .loader{display:none}
 <footer class="foot">
   <svg class="foot__web web-svg" data-rings="5" data-spokes="10" viewBox="-110 -110 220 220" aria-hidden="true"></svg>
   <div class="wrap">
-    <img class="foot__coin" src="assets/logo.webp" alt="The Verzish.com Vol.3 logo" loading="lazy" width="150" height="150">
+    <img class="foot__coin" src="logo.webp" alt="The Verzish.com Vol.3 logo" loading="lazy" width="150" height="150">
     <div class="foot__big">Always<span>on top.</span></div>
     <div class="foot__row">
       <div><h4>Verzish 3.0</h4><p>Plot # B-122, Block H</p><p>North Nazimabad, Karachi</p><p>2nd floor · Street 5</p></div>
@@ -729,27 +733,30 @@ html:not(.js) .loader{display:none}
 
   /* ---------- videos: base64 (published) or files (deployed) ---------- */
   const vids = { hero: $('.hero__video'), studio: $('.studio__video video') };
-  function attach(map) {
-    window.__vset = true;
-    Object.entries(vids).forEach(([k, v]) => {
-      if (!v) return;
-      let src = 'assets/' + k + '.mp4';
-      if (map && map[k]) {
-        try {
-          const b = atob(map[k]); const u = new Uint8Array(b.length);
-          for (let i = 0; i < b.length; i++) u[i] = b.charCodeAt(i);
-          src = URL.createObjectURL(new Blob([u], { type: 'video/mp4' }));
-        } catch (e) { return; }
-      }
-      v.src = src;
-      v.addEventListener('loadeddata', () => { v.style.opacity = 1; const p = v.previousElementSibling; if (p && p.tagName === 'IMG') p.style.opacity = 0; }, { once: true });
-      v.style.opacity = 0; v.style.transition = 'opacity 1s';
-      if (RM) { v.removeAttribute('autoplay'); v.pause(); }
-      else v.play().catch(() => {});
-    });
-  }
-  window.__setVideos = attach;
-  d.addEventListener('DOMContentLoaded', () => { if (!window.__vset) attach(null); });
+  function reveal(v) { v.style.opacity = 1; const p = v.previousElementSibling; if (p && p.tagName === 'IMG') p.style.opacity = 0; }
+  Object.values(vids).forEach(v => {
+    if (!v) return;
+    v.style.transition = 'opacity 1s';
+    v.addEventListener('playing', () => reveal(v), { once: true });
+    if (RM) { v.removeAttribute('autoplay'); v.pause(); } else v.play().catch(() => {});
+  });
+  // single-file preview only: videos arrive as base64
+  window.__setVideos = map => Object.entries(map).forEach(([k, b64]) => {
+    const v = vids[k]; if (!v) return;
+    let url = 'data:video/mp4;base64,' + b64;
+    try { const bin = atob(b64), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); url = URL.createObjectURL(new Blob([u], { type: 'video/mp4' })); } catch (e) {}
+    v.addEventListener('error', () => { if (v.src.startsWith('blob:')) { v.src = 'data:video/mp4;base64,' + b64; v.play().catch(() => {}); } }, { once: true });
+    v.src = url; v.load(); if (!RM) v.play().catch(() => {});
+  });
+  // sound toggle for the 48s reel
+  const sb = $('#soundBtn');
+  sb.addEventListener('click', () => {
+    const v = vids.hero, on = v.muted;
+    v.muted = !on; if (on) v.play().catch(() => {});
+    sb.setAttribute('aria-pressed', on); sb.setAttribute('aria-label', on ? 'Turn reel sound off' : 'Turn reel sound on');
+    $('#sndLbl').textContent = on ? 'Sound on' : 'Sound off';
+    $('#sndIco').setAttribute('d', on ? 'M16 8.5a5 5 0 0 1 0 7M19 5.5a9 9 0 0 1 0 13' : 'M17 9l5 6M22 9l-5 6');
+  });
 
   /* ---------- small helpers ---------- */
   $('#yr').textContent = new Date().getFullYear();
@@ -898,6 +905,8 @@ html:not(.js) .loader{display:none}
     .to('.hero__inner', { yPercent: -18, opacity: .2, ease: 'none' }, 0)
     .to('.hero__mark', { yPercent: -35, scale: 1.15, ease: 'none' }, 0)
     .to('.hero__web', { rotate: 40, ease: 'none' }, 0);
+
+  ScrollTrigger.create({ trigger: hero, start: 'top top', end: 'bottom top', onLeave: () => { if (!vids.hero.muted) sb.click(); } });
 
   /* nav hide/show + progress */
   const nav = $('#nav');
