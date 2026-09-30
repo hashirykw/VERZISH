@@ -63,6 +63,18 @@
   padding-top:env(safe-area-inset-top,0px);
 }
 *,*::before,*::after{box-sizing:inherit}
+/* scrollbars in the Verzish palette (disc black track, chrome thumb) */
+html{scrollbar-width:thin;scrollbar-color:var(--color-steel) var(--color-ink)}
+html:hover{scrollbar-color:var(--color-mute) var(--color-ink)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--color-ink)}
+::-webkit-scrollbar-thumb{background:var(--color-steel);border-radius:10px;border:2px solid var(--color-ink)}
+::-webkit-scrollbar-thumb:hover{background:var(--color-silver)}
+::-webkit-scrollbar-corner{background:var(--color-ink)}
+.bot__log,.bot__chips,.tabs,.tour__track{scrollbar-width:thin;scrollbar-color:var(--color-steel) transparent}
+.bot__log::-webkit-scrollbar{width:6px}
+.bot__log::-webkit-scrollbar-track{background:transparent}
+.bot__log::-webkit-scrollbar-thumb{border:0;background:var(--color-steel)}
 html{overflow-x:clip;scroll-padding-top:calc(90px + env(safe-area-inset-top,0px));background:var(--color-ink);color-scheme:dark}
 body{margin:0;overflow-x:clip;background:var(--color-ink);color:var(--color-soft);font-family:var(--font-body);font-size:var(--text-md);line-height:1.6;-webkit-font-smoothing:antialiased;font-variation-settings:"wdth" 100}
 img,video,svg{max-width:100%;display:block}
@@ -1280,6 +1292,7 @@ html:not(.js) .loader{display:none}
   }
 
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
   const E = 'expo.out';
 
   /* smooth scroll */
@@ -1295,7 +1308,7 @@ html:not(.js) .loader{display:none}
   const chars = $$('.hero__title .ch');
   gsap.set(chars, { yPercent: 115, rotate: 6 });
   gsap.set(['.hero__eyebrow', '.hero__sub', '.hero__ctas', '.hero__tools', '.scroll-cue'], { opacity: 0, y: 24 });
-  gsap.set('.hero__coin', { scale: .4, opacity: 0, rotateY: -180 });
+  gsap.set('.hero__coin img', { scale: .4, opacity: 0, rotateY: -180 });
   gsap.set('.hero__media', { scale: 1.25 });
   const cnt = { v: 0 };
   const intro = gsap.timeline({ delay: .1 });
@@ -1305,7 +1318,7 @@ html:not(.js) .loader{display:none}
     .to(chars, { yPercent: 0, rotate: 0, duration: 1.3, ease: E, stagger: .035 }, '<.25')
     .to(heroWeb.spokes, { strokeDashoffset: 0, duration: 1.2, ease: 'power2.out', stagger: .04 }, '<')
     .to(heroWeb.rings, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.out', stagger: .08 }, '<.3')
-    .to('.hero__coin', { scale: 1, opacity: 1, rotateY: 0, duration: 1.6, ease: E }, '<')
+    .to('.hero__coin img', { scale: 1, opacity: 1, rotateY: 0, duration: 1.6, ease: E }, '<')
     .to(['.hero__eyebrow', '.hero__sub', '.hero__ctas', '.hero__tools', '.scroll-cue'], { opacity: 1, y: 0, duration: 1, ease: E, stagger: .07 }, '<.2')
     .add(() => loader.remove());
   gsap.to(heroWeb.g, { rotation: 360, svgOrigin: '0 0', duration: 140, ease: 'none', repeat: -1 });
@@ -1329,14 +1342,17 @@ html:not(.js) .loader{display:none}
   ScrollTrigger.create({ start: 0, end: 'max', onUpdate: s => { const v = Math.min(Math.abs(s.getVelocity()) / 220, 7); if (1 + v > speed.v) speed.v = 1 + v; } });
   gsap.ticker.add(() => { speed.v += (1 - speed.v) * .06; mqs.forEach(t => t.timeScale(speed.v)); });
 
-  /* reveals */
-  ScrollTrigger.batch('.rv', { start: 'top 90%', onEnter: b => gsap.to(b, { opacity: 1, y: 0, duration: 1.1, ease: E, stagger: .08, onComplete() { b.forEach(x => x.classList.add('is-in')); } }) });
-
-  /* counters */
-  $$('.count').forEach(c => {
-    const to = +c.dataset.to, dec = !!c.dataset.dec, o = { v: 0 };
-    ScrollTrigger.create({ trigger: c, start: 'top 90%', once: true, onEnter: () => gsap.to(o, { v: to, duration: 1.8, ease: 'power3.out', onUpdate: () => c.textContent = dec ? o.v.toFixed(1) : Math.round(o.v) }) });
-  });
+  /* mosaic: one full-screen photo pulls back into a 15-photo wall */
+  const grid = $('.mosaic__grid'), center = $('.mosaic__grid .is-center');
+  if (grid && center) {
+    // layout size (offsetWidth/Height ignore transforms), so the centre photo exactly covers the screen at the start
+    const startScale = () => Math.max(innerWidth / center.offsetWidth, innerHeight / center.offsetHeight) * 1.02;
+    const others = $$('.mosaic__grid figure:not(.is-center)');
+    gsap.timeline({ scrollTrigger: { trigger: '.mosaic__pin', start: 'top top', end: '+=170%', pin: true, scrub: 1, invalidateOnRefresh: true } })
+      .fromTo(grid, { scaleX: startScale, scaleY: startScale }, { scaleX: 1, scaleY: 1, ease: 'power1.inOut', duration: 1 }, 0)
+      .fromTo(others, { opacity: 0 }, { opacity: 1, stagger: { each: .02, from: 'center', grid: 'auto' }, duration: .5 }, .15)
+      .fromTo('.mosaic__title', { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: .35 }, .75);
+  }
 
   const mm = gsap.matchMedia();
   const webPhotos = $$('.web__photos img');
@@ -1362,17 +1378,6 @@ html:not(.js) .loader{display:none}
       .to(webPhotos[1], { opacity: 1, duration: .3 }, .4).to(webPhotos[2], { opacity: 1, duration: .3 }, .9);
   });
 
-  /* mosaic: one full-screen photo pulls back into a 15-photo wall */
-  const grid = $('.mosaic__grid'), center = $('.mosaic__grid .is-center');
-  if (grid && center) {
-    const startScale = () => { gsap.set(grid, { scale: 1 }); const r = center.getBoundingClientRect(); return Math.max(innerWidth / r.width, innerHeight / r.height) * 1.02; };
-    const others = $$('.mosaic__grid figure:not(.is-center)');
-    gsap.timeline({ scrollTrigger: { trigger: '.mosaic__pin', start: 'top top', end: '+=170%', pin: true, scrub: 1, invalidateOnRefresh: true } })
-      .fromTo(grid, { scale: startScale }, { scale: 1, ease: 'power1.inOut', duration: 1 }, 0)
-      .fromTo(others, { opacity: 0 }, { opacity: 1, stagger: { each: .02, from: 'center', grid: 'auto' }, duration: .5 }, .15)
-      .fromTo('.mosaic__title', { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: .35 }, .75);
-  }
-
   /* sticky stack: earlier slides sink back */
   const slides = $$('.slide');
   slides.forEach((s, i) => {
@@ -1391,6 +1396,15 @@ html:not(.js) .loader{display:none}
     const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-live', e.isIntersecting)), { root: $('.tour__track'), threshold: .6 });
     $$('.card').forEach(c => io.observe(c));
   }
+
+  /* reveals */
+  ScrollTrigger.batch('.rv', { start: 'top 90%', onEnter: b => gsap.to(b, { opacity: 1, y: 0, duration: 1.1, ease: E, stagger: .08, onComplete() { b.forEach(x => x.classList.add('is-in')); } }) });
+
+  /* counters */
+  $$('.count').forEach(c => {
+    const to = +c.dataset.to, dec = !!c.dataset.dec, o = { v: 0 };
+    ScrollTrigger.create({ trigger: c, start: 'top 90%', once: true, onEnter: () => gsap.to(o, { v: to, duration: 1.8, ease: 'power3.out', onUpdate: () => c.textContent = dec ? o.v.toFixed(1) : Math.round(o.v) }) });
+  });
 
   /* desktop-only toys: cursor, magnetic, tilt */
   if (FINE) {
