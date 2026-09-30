@@ -117,15 +117,29 @@ p{margin:0}
 /* progress */
 .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--color-glow);box-shadow:var(--glow-sm);z-index:120}
 
-/* preloader */
-.loader{position:fixed;inset:0;z-index:150;display:grid;place-items:center;background:radial-gradient(70% 50% at 50% 40%,var(--color-ink-3),var(--color-ink-2) 55%,var(--color-ink))}
-.loader__coin{position:relative;width:min(62vw,300px);aspect-ratio:1;perspective:800px}
-.loader__coin svg{position:absolute;inset:0;animation:spin 8s linear infinite}
-.loader__coin img{position:absolute;inset:17%;width:66%;border-radius:50%;animation:flip 1.6s var(--ease-in-out) infinite;box-shadow:0 0 40px rgb(242 243 245 / .15)}
-@keyframes flip{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
-.loader__count{position:absolute;bottom:calc(8vh + env(safe-area-inset-bottom,0px));left:var(--gutter);font-family:var(--font-display);font-weight:900;font-size:clamp(4rem,14vw,9rem);line-height:.8;color:var(--color-glow)}
-.loader__cap{position:absolute;bottom:calc(8vh + env(safe-area-inset-bottom,0px));right:var(--gutter);text-align:right}
-@keyframes spin{to{transform:rotate(360deg)}}
+/* preloader: lines line up, VERZISH gets stitched on, screen splits open */
+.loader{position:fixed;inset:0;z-index:150;display:grid;place-items:center;overflow:hidden}
+.ld__half{position:absolute;left:0;right:0;height:50.5%;background:var(--color-ink);will-change:transform}
+.ld__half--t{top:0;background:linear-gradient(180deg,var(--color-ink),var(--color-ink-2))}
+.ld__half--b{bottom:0;background:linear-gradient(0deg,var(--color-ink),var(--color-ink-2))}
+.ld__stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px}
+.ld__mark{position:relative;width:min(88vw,1060px);aspect-ratio:1000/300}
+@media (max-width:600px){.ld__mark{width:98vw}}
+.ld__line{position:absolute;left:calc(50% - 50vw);width:100vw;height:1px;background:rgb(242 243 245 / .22);transform:scaleX(0);transform-origin:0 50%}
+.ld__line:nth-child(even){transform-origin:100% 50%}
+.ld__line--main{height:1.5px;background:rgb(242 243 245 / .5);box-shadow:0 0 10px rgb(242 243 245 / .35)}
+.ld__svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ld__svg text{font-family:var(--font-display);font-weight:900;font-size:236px;letter-spacing:6px}
+.ld__stitch{fill:none;stroke:var(--color-silver);stroke-width:2.4;stroke-dasharray:10 7;stroke-linecap:round;animation:march .7s linear infinite}
+.ld__fill{fill:var(--color-glow);filter:drop-shadow(0 0 14px rgb(242 243 245 / .35))}
+.ld__needle{stroke:#fff;stroke-width:2.5;stroke-linecap:round;filter:drop-shadow(0 0 6px #fff) drop-shadow(0 0 16px rgb(242 243 245 / .8));opacity:0}
+@keyframes march{to{stroke-dashoffset:-34}}
+.ld__sub{display:flex;gap:18px;align-items:center;font-family:var(--font-mono);font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--color-soft);opacity:0}
+.ld__dots{color:var(--color-mute)}
+.ld__meta{position:absolute;z-index:2;bottom:calc(6vh + env(safe-area-inset-bottom,0px))}
+.ld__meta--l{left:var(--gutter);font-family:var(--font-display);font-weight:800;font-size:clamp(2.4rem,6vw,4.4rem);letter-spacing:.04em;color:var(--color-glow);font-variant-numeric:tabular-nums}
+.ld__meta--r{right:var(--gutter)}
+@media (max-width:600px){.ld__sub{flex-direction:column;gap:6px;letter-spacing:.24em;font-size:11px}}
 html:not(.js) .loader{display:none}
 
 /* nav — N5 floating pill */
@@ -511,16 +525,34 @@ html:not(.js) .loader{display:none}
 .gal__filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--space-lg)}
 .gal__filters .pick::before{display:none}
 .gal__filters .pick img{width:22px;height:22px;border-radius:50%}
-.gal{columns:4 230px;column-gap:12px}
-.gal__item{position:relative;display:block;width:100%;margin:0 0 12px;padding:0;border-radius:14px;overflow:hidden;break-inside:avoid;background:var(--color-ink-2);cursor:zoom-in;border:1px solid var(--color-line)}
-.gal__item img{width:100%;aspect-ratio:9/14;object-fit:cover;filter:grayscale(.85) brightness(.82);transition:filter .7s var(--ease-out),transform 1s var(--ease-out)}
-.gal__item:nth-child(3n+2) img{aspect-ratio:4/5}.gal__item:nth-child(5n) img{aspect-ratio:1}.gal__item:nth-child(7n+3) img{aspect-ratio:3/4}
-.gal__item:hover img,.gal__item:focus-visible img,.gal__item.is-live img{filter:none;transform:scale(1.05)}
-.gal__cap{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;background:linear-gradient(transparent,rgb(8 9 11 / .85));font-size:12px;color:var(--color-soft);text-align:left;transform:translateY(8px);opacity:.85;transition:transform var(--dur-base) var(--ease-out),opacity var(--dur-base)}
-.gal__cap b{display:block;font-family:var(--font-mono);font-weight:500;font-size:10px;letter-spacing:.14em;color:var(--color-mute)}
-.gal__item:hover .gal__cap{transform:none;opacity:1}
-.gal__item.is-out{display:none}
-@media (max-width:600px){.gal{columns:2 140px;column-gap:8px}.gal__item{margin-bottom:8px;border-radius:10px}}
+.fan__bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.fan__bar .gal__filters{margin:0}
+.fan__count{font-size:var(--text-sm);color:var(--color-mute)}
+.fan__count b{color:var(--color-glow);font-weight:700}
+.gal__filters .pick .n{font-family:var(--font-mono);font-size:11px;opacity:.6;margin-left:2px}
+.fan{position:relative;height:clamp(420px,40vw,560px);margin-top:28px}
+.fcard{position:absolute;top:50%;left:var(--x);width:clamp(200px,19vw,280px);aspect-ratio:3/4;padding:0;border:0;background:none;cursor:zoom-in;z-index:var(--z);
+  transform:translate(-50%,-50%) translateY(var(--y)) rotate(var(--r));transition:transform .55s var(--ease-out),filter .45s var(--ease-out)}
+.fcard__in{position:relative;display:block;width:100%;height:100%;padding:7px;border-radius:20px;background:var(--color-ink-3);border:1px solid rgb(242 243 245 / .28);box-shadow:0 24px 50px rgb(8 9 11 / .6),inset 0 1px 0 rgb(242 243 245 / .12)}
+.fcard img{width:100%;height:100%;object-fit:cover;border-radius:14px;filter:grayscale(.5) brightness(.85);transition:filter .5s var(--ease-out)}
+.fcard__tag{position:absolute;left:18px;bottom:16px;padding:5px 10px;border-radius:var(--radius-pill);background:rgb(15 17 20 / .75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-soft);opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s var(--ease-out)}
+.fan.is-hovering .fcard{filter:brightness(.55)}
+.fan .fcard:hover,.fan .fcard:focus-visible{z-index:50;filter:none;transform:translate(-50%,-50%) translateY(calc(var(--y) - 22px)) rotate(0deg) scale(1.08)}
+.fcard:hover img,.fcard:focus-visible img{filter:none}
+.fcard:hover .fcard__tag,.fcard:focus-visible .fcard__tag{opacity:1;transform:none}
+.fcard:hover .fcard__in{border-color:rgb(242 243 245 / .6);box-shadow:0 34px 70px rgb(8 9 11 / .75),0 0 0 1px rgb(242 243 245 / .3)}
+.fan__hint{margin-top:18px;text-align:center}
+.fan__hint--touch{display:none}
+@media (hover:none),(max-width:760px){
+  .fan{height:auto;display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 19vw 40px;margin-inline:calc(var(--gutter) * -1);scrollbar-width:none}
+  .fan::-webkit-scrollbar{display:none}
+  .fcard{position:relative;top:auto;left:auto;flex:0 0 62vw;max-width:300px;margin-right:-10vw;scroll-snap-align:center;transform:translateY(var(--y)) rotate(var(--r));z-index:var(--z)}
+  .fcard.is-live{z-index:40;transform:translateY(-10px) rotate(0deg) scale(1.04)}
+  .fcard.is-live img{filter:none}
+  .fcard.is-live .fcard__tag{opacity:1;transform:none}
+  .fan.is-hovering .fcard{filter:none}
+  .fan__hint--fine{display:none}.fan__hint--touch{display:inline}
+}
 .lb{position:fixed;inset:0;z-index:130;display:grid;grid-template-columns:64px minmax(0,1fr) 64px;align-items:center;gap:8px;padding:calc(20px + env(safe-area-inset-top,0px)) 12px calc(20px + env(safe-area-inset-bottom,0px));background:rgb(8 9 11 / .94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);animation:lbIn .3s var(--ease-out)}
 .lb[hidden]{display:none}
 @keyframes lbIn{from{opacity:0}to{opacity:1}}
@@ -550,12 +582,28 @@ html:not(.js) .loader{display:none}
 <div class="cursor" aria-hidden="true"><span>VIEW</span></div><div class="cursor-dot" aria-hidden="true"></div>
 
 <div class="loader" aria-hidden="true">
-  <div class="loader__coin">
-    <svg viewBox="0 0 200 200"><path id="lp" d="M100 100 m-92 0 a92 92 0 1 1 184 0 a92 92 0 1 1 -184 0" fill="none"/><text font-family="Geist Mono, monospace" font-size="9" letter-spacing="3.2" fill="#afafaf"><textPath href="#lp">THE VERZISH.COM · VOL 1.0 · VOL 2.0 · VOL 3.0 · ALWAYS ON TOP ·</textPath></text></svg>
-    <img src="mark.webp" alt="">
+  <div class="ld__half ld__half--t"></div><div class="ld__half ld__half--b"></div>
+  <div class="ld__stage">
+    <div class="ld__mark">
+      <span class="ld__line" style="top:3%"></span>
+      <span class="ld__line ld__line--main" style="top:15%"></span>
+      <span class="ld__line" style="top:42.5%"></span>
+      <span class="ld__line ld__line--main" style="top:70%"></span>
+      <span class="ld__line" style="top:86%"></span>
+      <svg class="ld__svg" viewBox="0 0 1000 300">
+        <defs>
+          <clipPath id="ldClipS"><rect id="ldRectS" x="0" y="0" width="0" height="300"/></clipPath>
+          <clipPath id="ldClipF"><rect id="ldRectF" x="0" y="0" width="0" height="300"/></clipPath>
+        </defs>
+        <text class="ld__stitch" x="500" y="210" text-anchor="middle" clip-path="url(#ldClipS)">VERZISH</text>
+        <text class="ld__fill" x="500" y="210" text-anchor="middle" clip-path="url(#ldClipF)">VERZISH</text>
+        <line class="ld__needle" id="ldNeedle" x1="0" y1="18" x2="0" y2="262"/>
+      </svg>
+    </div>
+    <div class="ld__sub"><span>The Verzish.com</span><span class="ld__dots">Vol 1.0 · 2.0 · 3.0</span></div>
   </div>
-  <div class="loader__count"><span id="lc">0</span></div>
-  <div class="loader__cap mono">Karachi<br>3 branches · unisex</div>
+  <div class="ld__meta ld__meta--l mono"><span id="lc">000</span></div>
+  <div class="ld__meta ld__meta--r mono">Karachi · unisex gyms</div>
 </div>
 
 <header class="nav" id="nav">
@@ -750,51 +798,15 @@ html:not(.js) .loader{display:none}
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY: fanned deck of frames -->
 <section class="gallery wrap" id="gallery" aria-labelledby="gal-h">
-  <div class="sec-head"><h2 id="gal-h" class="rv">The gallery.</h2><p class="rv">34 shots from our own floors. Filter by branch, tap any photo to open it.</p></div>
-  <div class="gal__filters rv" role="group" aria-label="Filter by branch">
-    <button class="pick" aria-pressed="true" data-f="all">All branches</button>
-    <button class="pick" aria-pressed="false" data-f="3"><img src="logo-v3.webp" alt="" width="22" height="22">Vol 3.0</button>
-    <button class="pick" aria-pressed="false" data-f="2"><img src="logo-v2.webp" alt="" width="22" height="22">Vol 2.0</button>
-    <button class="pick" aria-pressed="false" data-f="1"><img src="logo-v1.webp" alt="" width="22" height="22">Vol 1.0</button>
+  <div class="sec-head"><h2 id="gal-h" class="rv">Inside the volumes.</h2><p class="rv">Heavy iron, turf lanes, lit signs and the walls in between. Open any frame to see it full size.</p></div>
+  <div class="fan__bar rv">
+    <div class="gal__filters" role="tablist" aria-label="Gallery sets" id="fanTabs"></div>
+    <span class="fan__count"><b id="fanN">0</b> frames</span>
   </div>
-  <div class="gal">
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · LED web ceiling" data-cursor="view"><img src="web.webp" alt="LED web ceiling at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>LED web ceiling</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · The glowing sign" data-cursor="view"><img src="j_sign.webp" alt="The glowing sign at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>The glowing sign</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Studio mats" data-cursor="view"><img src="studio_mats.webp" alt="Studio mats at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Studio mats</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Battle ropes on turf" data-cursor="view"><img src="j_ropes.webp" alt="Battle ropes on turf at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Battle ropes on turf</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Verzish logo plates" data-cursor="view"><img src="platetree.webp" alt="Verzish logo plates at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Verzish logo plates</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Hustle row" data-cursor="view"><img src="j_hustle.webp" alt="Hustle row at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Hustle row</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Dumbbell rack" data-cursor="view"><img src="rack.webp" alt="Dumbbell rack at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Dumbbell rack</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Front desk" data-cursor="view"><img src="j_desk.webp" alt="Front desk at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Front desk</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Kettlebells + med balls" data-cursor="view"><img src="studio_balls.webp" alt="Kettlebells + med balls at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Kettlebells + med balls</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Ring mirror bench" data-cursor="view"><img src="j_mirror.webp" alt="Ring mirror bench at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Ring mirror bench</span></button>
-    <button class="gal__item" data-b="1" data-cap="Vol 1.0 · The original sign" data-cursor="view"><img src="v1_front.webp" alt="The original sign at Verzish 1.0" loading="lazy"><span class="gal__cap"><b>Vol 1.0</b>The original sign</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Transform wall" data-cursor="view"><img src="transform.webp" alt="Transform wall at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Transform wall</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Turf floor" data-cursor="view"><img src="j_turf.webp" alt="Turf floor at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Turf floor</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Backlit hex mirrors" data-cursor="view"><img src="studio_hex.webp" alt="Backlit hex mirrors at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Backlit hex mirrors</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Dumbbell rows" data-cursor="view"><img src="j_dumbbells.webp" alt="Dumbbell rows at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Dumbbell rows</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Discipline wall" data-cursor="view"><img src="discipline.webp" alt="Discipline wall at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Discipline wall</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Leg press" data-cursor="view"><img src="j_legpress.webp" alt="Leg press at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Leg press</span></button>
-    <button class="gal__item" data-b="1" data-cap="Vol 1.0 · Hex LED lights" data-cursor="view"><img src="v1_hex.webp" alt="Hex LED lights at Verzish 1.0" loading="lazy"><span class="gal__cap"><b>Vol 1.0</b>Hex LED lights</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Hammer bumpers" data-cursor="view"><img src="plates.webp" alt="Hammer bumpers at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Hammer bumpers</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Cardio zone" data-cursor="view"><img src="j_cardio.webp" alt="Cardio zone at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Cardio zone</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · 10 kg Hammer plate" data-cursor="view"><img src="studio_pink.webp" alt="10 kg Hammer plate at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>10 kg Hammer plate</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Cable machines" data-cursor="view"><img src="j_machines.webp" alt="Cable machines at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Cable machines</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Bench zone" data-cursor="view"><img src="bench.webp" alt="Bench zone at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Bench zone</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Welcome to the pain zone" data-cursor="view"><img src="j_painzone.webp" alt="Welcome to the pain zone at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Welcome to the pain zone</span></button>
-    <button class="gal__item" data-b="1" data-cap="Vol 1.0 · Spin bikes" data-cursor="view"><img src="v1_bikes.webp" alt="Spin bikes at Verzish 1.0" loading="lazy"><span class="gal__cap"><b>Vol 1.0</b>Spin bikes</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Under the web" data-cursor="view"><img src="web2.webp" alt="Under the web at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Under the web</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Small steps, big gains" data-cursor="view"><img src="j_floor.webp" alt="Small steps, big gains at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Small steps, big gains</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Studio rack" data-cursor="view"><img src="studio_rack.webp" alt="Studio rack at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Studio rack</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Treadmill row" data-cursor="view"><img src="j_treadmills.webp" alt="Treadmill row at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Treadmill row</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Lockers" data-cursor="view"><img src="lockers.webp" alt="Lockers at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Lockers</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Free-weight corner" data-cursor="view"><img src="j_rack.webp" alt="Free-weight corner at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Free-weight corner</span></button>
-    <button class="gal__item" data-b="1" data-cap="Vol 1.0 · Kettlebell shelf" data-cursor="view"><img src="v1_bells.webp" alt="Kettlebell shelf at Verzish 1.0" loading="lazy"><span class="gal__cap"><b>Vol 1.0</b>Kettlebell shelf</span></button>
-    <button class="gal__item" data-b="3" data-cap="Vol 3.0 · Cardio in red" data-cursor="view"><img src="treadmill.webp" alt="Cardio in red at Verzish 3.0" loading="lazy"><span class="gal__cap"><b>Vol 3.0</b>Cardio in red</span></button>
-    <button class="gal__item" data-b="2" data-cap="Vol 2.0 · Main floor" data-cursor="view"><img src="j_wide.webp" alt="Main floor at Verzish 2.0" loading="lazy"><span class="gal__cap"><b>Vol 2.0</b>Main floor</span></button>
-  </div>
+  <div class="fan" id="fan"></div>
+  <p class="fan__hint mono"><span class="fan__hint--fine">Hover a frame to bring it forward. Click to open it.</span><span class="fan__hint--touch">Swipe through the frames. Tap to open.</span></p>
 </section>
 
 <!-- UNDER THE WEB (3.0) -->
@@ -1232,23 +1244,68 @@ html:not(.js) .loader{display:none}
   wa.addEventListener('click', e => { if (nm.getAttribute('aria-invalid') === 'true') { e.preventDefault(); nm.focus(); } });
   msg();
 
-  /* ---------- gallery: filters + lightbox ---------- */
-  const gItems = $$('.gal__item'), gFilters = $$('.gal__filters .pick'), lb = $('#lb'), lbImg = $('#lbImg');
-  let gList = gItems, gi = 0, lastFocus = null;
-  gFilters.forEach(f => f.addEventListener('click', () => {
-    gFilters.forEach(x => x.setAttribute('aria-pressed', x === f));
-    const v = f.dataset.f; gItems.forEach(it => it.classList.toggle('is-out', v !== 'all' && it.dataset.b !== v));
-    gList = gItems.filter(it => !it.classList.contains('is-out'));
-    if (window.ScrollTrigger) ScrollTrigger.refresh();
-  }));
-  function lbShow(i) {
-    gi = (i + gList.length) % gList.length; const it = gList[gi], im = $('img', it);
-    lbImg.src = im.currentSrc || im.src; lbImg.alt = im.alt;
-    $('#lbCap').textContent = it.dataset.cap; $('#lbNum').textContent = (gi + 1) + ' / ' + gList.length;
+  /* ---------- gallery: fanned deck of frames + lightbox ---------- */
+  const SETS = [
+    { label: 'Vol 3.0', coin: 'logo-v3.webp', items: [['web.webp', 'LED web ceiling', '3.0'], ['rack.webp', 'Dumbbell rack', '3.0'], ['transform.webp', 'Transform wall', '3.0'], ['plates.webp', 'Hammer bumpers', '3.0'], ['bench.webp', 'Bench zone', '3.0'], ['platetree.webp', 'Verzish logo plates', '3.0'], ['painzone.webp', 'The pain zone', '3.0']] },
+    { label: 'Vol 2.0', coin: 'logo-v2.webp', items: [['j_sign.webp', 'The glowing sign', '2.0'], ['j_ropes.webp', 'Battle ropes on turf', '2.0'], ['j_hustle.webp', 'Hustle row', '2.0'], ['j_desk.webp', 'Front desk', '2.0'], ['j_mirror.webp', 'Ring mirror bench', '2.0'], ['j_turf.webp', 'Turf floor', '2.0'], ['j_legpress.webp', 'Leg press', '2.0']] },
+    { label: 'Studio', items: [['studio_hex.webp', 'Backlit hex mirrors', '3.0'], ['studio_mats.webp', 'Mats laid out', '3.0'], ['studio_balls.webp', 'Kettlebells + med balls', '3.0'], ['studio_pink.webp', '10 kg Hammer plate', '3.0'], ['studio_rack.webp', 'Studio rack', '3.0']] },
+    { label: 'Walls & signs', items: [['j_painzone.webp', 'Welcome to the pain zone', '2.0'], ['discipline.webp', 'Discipline wall', '3.0'], ['j_floor.webp', 'Small steps, big gains', '2.0'], ['welcome.webp', 'Welcome wall', '3.0'], ['j_hardtimes.webp', 'Hard times wall', '2.0']] },
+    { label: 'Vol 1.0', coin: 'logo-v1.webp', items: [['v1_front.webp', 'The original sign', '1.0'], ['v1_hex.webp', 'Hex LED lights', '1.0'], ['v1_bikes.webp', 'Spin bikes', '1.0'], ['v1_bells.webp', 'Kettlebell shelf', '1.0']] }
+  ];
+  const ROT = [-6, 4, -2.5, 5, -4, 3, -5], LIFT = [14, -8, 10, -12, 6, -6, 12];
+  const fan = $('#fan'), fanTabs = $('#fanTabs'), fanN = $('#fanN'), lb = $('#lb'), lbImg = $('#lbImg');
+  const touchDeck = () => matchMedia('(hover: none), (max-width: 760px)').matches;
+  let gList = [], gi = 0, lastFocus = null, cur = 0, dealt = false, fanIO = null;
+  SETS.forEach((st, i) => {
+    const b = d.createElement('button'); b.className = 'pick'; b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', i === 0); b.setAttribute('aria-pressed', i === 0);
+    b.innerHTML = (st.coin ? '<img src="' + st.coin + '" alt="" width="22" height="22">' : '') + st.label + ' <span class="n">' + st.items.length + '</span>';
+    b.addEventListener('click', () => showSet(i, true)); fanTabs.appendChild(b);
+  });
+  function renderSet(i) {
+    const items = SETS[i].items, n = items.length; gList = items;
+    fan.innerHTML = '';
+    items.forEach(([src, cap, vol], k) => {
+      const x = n === 1 ? 50 : 13 + k * (74 / (n - 1));
+      const c = d.createElement('button'); c.className = 'fcard'; c.type = 'button';
+      c.style.cssText = `--x:${x}%;--r:${ROT[k % ROT.length]}deg;--y:${LIFT[k % LIFT.length]}px;--z:${10 + k}`;
+      c.setAttribute('aria-label', 'Open photo: ' + cap + ', Vol ' + vol);
+      c.innerHTML = '<span class="fcard__in"><img src="' + src + '" alt="' + cap + ' at Verzish ' + vol + '" loading="lazy"><span class="fcard__tag">Vol ' + vol + ' · ' + cap + '</span></span>';
+      c.addEventListener('click', () => lbOpen(k, c)); fan.appendChild(c);
+    });
+    fanN.textContent = n;
+    if (fanIO) fanIO.disconnect();
+    if (touchDeck()) { fanIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-live', e.intersectionRatio > .6)), { root: fan, threshold: [.6] }); $$('.fcard', fan).forEach(c => fanIO.observe(c)); fan.scrollLeft = 0; }
   }
-  function lbOpen(it) { lastFocus = it; lb.hidden = false; root.style.overflow = 'hidden'; if (window.__lenis) window.__lenis.stop(); lbShow(gList.indexOf(it)); $('.lb__close').focus(); }
+  function deal() {
+    const inners = $$('.fcard__in', fan); if (!window.gsap || RM) return;
+    const w = fan.clientWidth, deck = !touchDeck();
+    gsap.fromTo(inners, { y: 160, x: (k, el) => deck ? (50 - parseFloat(el.parentNode.style.getPropertyValue('--x'))) / 100 * w : 0, rotation: k => -ROT[k % ROT.length] * 2, opacity: 0 },
+      { y: 0, x: 0, rotation: 0, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: .07, overwrite: true });
+  }
+  function showSet(i, animate) {
+    if (i === cur && dealt) return;
+    $$('.pick', fanTabs).forEach((b, k) => { b.setAttribute('aria-selected', k === i); b.setAttribute('aria-pressed', k === i); });
+    const go = () => { cur = i; renderSet(i); if (animate) deal(); };
+    const inners = $$('.fcard__in', fan);
+    if (animate && window.gsap && !RM && inners.length) gsap.to(inners, { y: 90, opacity: 0, rotation: 0, duration: .32, ease: 'power2.in', stagger: .025, onComplete: go });
+    else go();
+  }
+  renderSet(0);
+  fan.addEventListener('pointerover', e => { if (!touchDeck()) fan.classList.toggle('is-hovering', !!e.target.closest('.fcard')); });
+  fan.addEventListener('pointerleave', () => fan.classList.remove('is-hovering'));
+  if ('IntersectionObserver' in window) {
+    const once = new IntersectionObserver(es => { if (es[0].isIntersecting && !dealt) { dealt = true; deal(); once.disconnect(); } }, { threshold: .25 });
+    once.observe(fan);
+    if (window.gsap && !RM) gsap.set($$('.fcard__in', fan), { opacity: 0, y: 160 });
+  }
+  function lbShow(i) {
+    gi = (i + gList.length) % gList.length; const [src, cap, vol] = gList[gi];
+    lbImg.src = src; lbImg.alt = cap + ' at Verzish ' + vol;
+    $('#lbCap').textContent = 'Vol ' + vol + ' · ' + cap; $('#lbNum').textContent = (gi + 1) + ' / ' + gList.length;
+  }
+  function lbOpen(i, from) { lastFocus = from; lb.hidden = false; root.style.overflow = 'hidden'; if (window.__lenis) window.__lenis.stop(); lbShow(i); $('.lb__close').focus(); }
   function lbClose() { lb.hidden = true; root.style.overflow = ''; if (window.__lenis) window.__lenis.start(); if (lastFocus) lastFocus.focus({ preventScroll: true }); }
-  gItems.forEach(it => it.addEventListener('click', () => lbOpen(it)));
   $('.lb__close').addEventListener('click', lbClose);
   $('.lb__prev').addEventListener('click', () => lbShow(gi - 1));
   $('.lb__next').addEventListener('click', () => lbShow(gi + 1));
@@ -1256,7 +1313,7 @@ html:not(.js) .loader{display:none}
   d.addEventListener('keydown', e => {
     if (lb.hidden) return;
     if (e.key === 'Escape') lbClose(); else if (e.key === 'ArrowRight') lbShow(gi + 1); else if (e.key === 'ArrowLeft') lbShow(gi - 1);
-    else if (e.key === 'Tab') { const f = $$('.lb__btn'); const i = f.indexOf(d.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus(); }
+    else if (e.key === 'Tab') { const f = $$('.lb__btn'); const k = f.indexOf(d.activeElement); e.preventDefault(); f[(k + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus(); }
   });
   let tx = null;
   lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
@@ -1292,6 +1349,7 @@ html:not(.js) .loader{display:none}
   }
 
   gsap.registerPlugin(ScrollTrigger);
+  gsap.ticker.lagSmoothing(400, 33); // after a busy frame, resume smoothly instead of skipping ahead
   ScrollTrigger.config({ ignoreMobileResize: true });
   const E = 'expo.out';
 
@@ -1300,7 +1358,7 @@ html:not(.js) .loader{display:none}
   if (window.Lenis) {
     lenis = new Lenis({ lerp: .09, smoothWheel: true }); window.__lenis = lenis;
     lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+    gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(400, 33);
     $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const id = a.getAttribute('href'); if (id.length < 2) return; const t = $(id); if (!t) return; e.preventDefault(); lenis.scrollTo(t, { offset: id === '#top' ? 0 : -20, duration: 1.4 }); }));
   }
 
@@ -1310,17 +1368,43 @@ html:not(.js) .loader{display:none}
   gsap.set(['.hero__eyebrow', '.hero__sub', '.hero__ctas', '.hero__tools', '.scroll-cue'], { opacity: 0, y: 24 });
   gsap.set('.hero__coin img', { scale: .4, opacity: 0, rotateY: -180 });
   gsap.set('.hero__media', { scale: 1.25 });
-  const cnt = { v: 0 };
-  const intro = gsap.timeline({ delay: .1 });
-  intro.to(cnt, { v: 100, duration: 1.4, ease: 'power2.inOut', onUpdate: () => { $('#lc').textContent = Math.round(cnt.v); } })
-    .to(loader, { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=.05')
-    .to('.hero__media', { scale: 1, duration: 2, ease: E }, '<.1')
-    .to(chars, { yPercent: 0, rotate: 0, duration: 1.3, ease: E, stagger: .035 }, '<.25')
-    .to(heroWeb.spokes, { strokeDashoffset: 0, duration: 1.2, ease: 'power2.out', stagger: .04 }, '<')
-    .to(heroWeb.rings, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.out', stagger: .08 }, '<.3')
-    .to('.hero__coin img', { scale: 1, opacity: 1, rotateY: 0, duration: 1.6, ease: E }, '<')
-    .to(['.hero__eyebrow', '.hero__sub', '.hero__ctas', '.hero__tools', '.scroll-cue'], { opacity: 1, y: 0, duration: 1, ease: E, stagger: .07 }, '<.2')
-    .add(() => loader.remove());
+  // preloader: guide lines sweep in, a needle stitches VERZISH across them, the letters fill, the screen splits open
+  const cnt = { v: 0 }, lc = $('#lc'), rs = $('#ldRectS'), rf = $('#ldRectF'), nd = $('#ldNeedle'), fillTxt = $('.ld__fill');
+  gsap.set('.ld__sub', { y: 10 });
+  const fontsReady = Promise.race([
+    (d.fonts && d.fonts.load) ? d.fonts.load('900 100px "Big Shoulders Display"') : Promise.resolve(),
+    new Promise(r => setTimeout(r, 1400))
+  ]);
+  const intro = gsap.timeline({ paused: true }); window.__intro = intro;
+  fontsReady.then(() => {
+    let x0 = 90, x1 = 910;
+    try { const bb = fillTxt.getBBox(); if (bb.width > 50) { x0 = bb.x - 6; x1 = bb.x + bb.width + 6; } } catch (e) {}
+    [rs, rf].forEach(r => { r.setAttribute('x', 0); r.setAttribute('width', x0); });
+    const needleTo = () => { const w = +rs.getAttribute('width'); nd.setAttribute('x1', w); nd.setAttribute('x2', w); };
+    needleTo();
+    intro
+      .to(cnt, { v: 100, duration: 2.7, ease: 'power1.inOut', onUpdate: () => { lc.textContent = String(Math.round(cnt.v)).padStart(3, '0'); } }, 0)
+      .to('.ld__line', { scaleX: 1, duration: 1.05, ease: 'expo.inOut', stagger: .09 }, 0)
+      .to(nd, { opacity: 1, duration: .2 }, .5)
+      .to(rs, { attr: { width: x1 }, duration: 1.3, ease: 'power2.inOut', onUpdate: needleTo }, .5)
+      .to(nd, { opacity: 0, duration: .25 }, 1.75)
+      .to(rf, { attr: { width: x1 }, duration: .95, ease: 'power2.inOut' }, 1.15)
+      .to('.ld__stitch', { opacity: .25, duration: .5 }, 1.95)
+      .to('.ld__sub', { opacity: 1, y: 0, duration: .7, ease: E }, 1.55)
+      .set('.ld__line', { transformOrigin: i => (i % 2 ? '0% 50%' : '100% 50%') }, 2.4)
+      .to('.ld__line', { scaleX: 0, duration: .75, ease: 'expo.inOut', stagger: .05 }, 2.4)
+      .to(['.ld__stage', '.ld__meta'], { opacity: 0, scale: .985, duration: .45, ease: 'power2.in' }, 2.7)
+      .to('.ld__half--t', { yPercent: -100, duration: 1.15, ease: 'expo.inOut' }, 2.95)
+      .to('.ld__half--b', { yPercent: 100, duration: 1.15, ease: 'expo.inOut' }, 2.95)
+      .to('.hero__media', { scale: 1, duration: 2, ease: E }, 3.1)
+      .to(chars, { yPercent: 0, rotate: 0, duration: 1.3, ease: E, stagger: .035 }, 3.3)
+      .to(heroWeb.spokes, { strokeDashoffset: 0, duration: 1.2, ease: 'power2.out', stagger: .04 }, 3.3)
+      .to(heroWeb.rings, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.out', stagger: .08 }, 3.6)
+      .to('.hero__coin img', { scale: 1, opacity: 1, rotateY: 0, duration: 1.6, ease: E }, 3.6)
+      .to(['.hero__eyebrow', '.hero__sub', '.hero__ctas', '.hero__tools', '.scroll-cue'], { opacity: 1, y: 0, duration: 1, ease: E, stagger: .07 }, 3.8)
+      .add(() => loader.remove(), 4.2)
+      .play();
+  });
   gsap.to(heroWeb.g, { rotation: 360, svgOrigin: '0 0', duration: 140, ease: 'none', repeat: -1 });
 
   /* hero scroll: shrink into a framed reel, text lifts, 3.0 races ahead */
@@ -1392,7 +1476,7 @@ html:not(.js) .loader{display:none}
 
   /* touch: switch photos to colour when they reach the middle of the screen */
   if (!FINE) {
-    $$('.tile, .hexrow figure, .gal__item').forEach(el => ScrollTrigger.create({ trigger: el, start: 'top 62%', end: 'bottom 38%', toggleClass: 'is-live' }));
+    $$('.tile, .hexrow figure').forEach(el => ScrollTrigger.create({ trigger: el, start: 'top 62%', end: 'bottom 38%', toggleClass: 'is-live' }));
     const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-live', e.isIntersecting)), { root: $('.tour__track'), threshold: .6 });
     $$('.card').forEach(c => io.observe(c));
   }
